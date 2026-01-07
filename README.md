@@ -5,14 +5,14 @@
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0%2B-green.svg)](https://scikit-learn.org/)
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE.md)
 
-A comprehensive machine learning project for spam email detection using multiple classification algorithms and feature representations. This project compares traditional **Bag-of-Words (BoW)** with modern **Sentence Embeddings (SBERT)** approaches, achieving up to **96.22% F1-score** and **99.78% AUC**.
+A comprehensive machine learning project for spam email detection using multiple classification algorithms and feature representations. This project compares traditional **Bag-of-Words (BoW)** with modern **Sentence Embeddings (SBERT)** approaches, achieving up to **96.85% F1-score** and **99.93% AUC**.
 
 ## 🎯 Project Overview
 
 This repository contains a complete implementation and analysis of spam email classification, developed as part of a thesis project. The project explores:
 
 - **Multiple ML Algorithms**: Naive Bayes, Logistic Regression, k-NN, SVM
-- **Feature Representations**: TF-IDF (5000 features) vs. Sentence Transformers (384-dim embeddings)
+- **Feature Representations**: Bag-of-Words with CountVectorizer (5000 features) vs. Sentence Transformers (384-dim embeddings)
 - **Dimensionality Reduction**: PCA with various variance retention ratios
 - **Comprehensive Evaluation**: Precision, Recall, F1-Score, AUC-ROC metrics
 
@@ -20,19 +20,20 @@ This repository contains a complete implementation and analysis of spam email cl
 
 | Model                   | Representation   | Precision  | Recall     | F1-Score   | AUC        | Rank |
 | ----------------------- | ---------------- | ---------- | ---------- | ---------- | ---------- | ---- |
-| **Naive Bayes**         | BoW (5000)       | 0.9439     | **0.9811** | **0.9622** | 0.9959     | 🥇   |
-| **SVM**                 | Embeddings (384) | **0.9587** | 0.9496     | 0.9541     | **0.9978** | 🥈   |
-| **Logistic Regression** | Embeddings (384) | 0.9391     | 0.9465     | 0.9427     | 0.9949     | 🥉   |
-| k-NN (k=1)              | BoW (5000)       | 0.9698     | 0.8583     | 0.9106     | 0.9251     | 4    |
-| SVM + PCA (90%)         | Embeddings+PCA   | 0.9887     | 0.8236     | 0.8986     | 0.9969     | 5    |
-| LogReg + PCA (10)       | Embeddings+PCA   | 0.8891     | 0.8961     | 0.8925     | 0.9887     | 6    |
+| **SVM (Polynomial)**    | Embeddings (384) | **0.9762** | 0.9609     | **0.9685** | **0.9993** | 🥇   |
+| **Naive Bayes**         | BoW (5000)       | 0.9609     | **0.9609** | 0.9609     | 0.9962     | 🥈   |
+| **Logistic Regression** | Embeddings (384) | 0.9603     | 0.9453     | 0.9528     | 0.9949     | 🥉   |
+| SVM + PCA (90%)         | Embeddings+PCA   | 0.9915     | 0.9062     | 0.9469     | 0.9984     | 4    |
+| k-NN (k=1)              | BoW (5000)       | **1.0000** | 0.8984     | 0.9465     | 0.9492     | 5    |
+| LogReg + PCA (10)       | Embeddings+PCA   | 0.9040     | 0.8828     | 0.8933     | 0.9889     | 6    |
 
 ### 🏆 Best Performers
 
-- **Best Overall**: Naive Bayes with BoW (F1: 96.22%, balanced performance)
-- **Highest Precision**: SVM+PCA (98.87%, excellent at avoiding false positives)
-- **Highest Recall**: Naive Bayes (98.11%, catches most spam)
-- **Best AUC**: SVM with Polynomial Kernel (99.78%, superior discrimination)
+- **Best Overall**: SVM Polynomial with Embeddings (F1: 96.85%, AUC: 99.93%)
+- **Highest Precision**: k-NN (100.00%, zero false positives)
+- **Highest Recall**: Naive Bayes + SVM tie (96.09%, catches most spam)
+- **Best AUC**: SVM with Polynomial Kernel (99.93%, superior discrimination)
+- **Best Balance**: SVM Polynomial (Precision: 97.62%, Recall: 96.09%)
 
 ## ✨ Features
 
@@ -222,9 +223,9 @@ The `emails.csv` dataset contains:
 
 **Data Distribution**:
 
-- Training set: 2,000 emails (513 spam / 1,487 ham)
-- Validation set: 1,000 emails (220 spam / 780 ham)
-- Test set: 2,728 emails (635 spam / 2,093 ham)
+- Training set: 4,582 emails (1,114 spam / 3,468 ham)
+- Validation set: 572 emails (126 spam / 446 ham)
+- Test set: 574 emails (128 spam / 446 ham)
 
 ## 🔬 Methodology
 
@@ -282,19 +283,21 @@ The complete thesis documentation is available in the PDF
 
 ## 📊 Key Insights
 
-1. **BoW vs Embeddings**: Traditional BoW with Naive Bayes slightly outperforms modern embeddings due to the binary classification nature and distinctive spam vocabulary.
+1. **Embeddings + SVM Win**: Modern sentence embeddings with SVM Polynomial kernel achieve the best performance (F1: 96.85%, AUC: 99.93%), demonstrating the power of semantic understanding combined with non-linear modeling.
 
-2. **Computational Trade-offs**:
+2. **Naive Bayes Remains Competitive**: Traditional BoW with Naive Bayes achieves F1=96.09% (only -0.76% behind SVM), making it an excellent choice for speed-critical applications.
 
-   - Naive Bayes: <1s training, instant inference
-   - SVM: 15-30s training, 0.1s per email
-   - BERT embeddings: 5-10 min generation (one-time)
+3. **Computational Trade-offs**:
 
-3. **PCA Impact**: Dimensionality reduction from 384→112 dims (90% variance) maintains 99.69% AUC but reduces recall by 12%.
+   - Naive Bayes: <1s training, instant inference (F1: 96.09%)
+   - SVM: 15-30s training, 0.1s per email (F1: 96.85%)
+   - BERT embeddings: 5-10 min generation (one-time cost)
 
-4. **Optimal Hyperparameters**:
-   - k-NN: k=1 best for spam (high precision)
-   - SVM: Polynomial kernel (degree=3) optimal
+4. **PCA Impact**: Dimensionality reduction from 384→115 dims (90% variance) maintains 99.84% AUC but reduces F1 from 96.85% to 94.69% (-2.16%).
+
+5. **Optimal Hyperparameters**:
+   - k-NN: k=1 achieves perfect precision (100.00%)
+   - SVM: Polynomial kernel (degree=3) optimal for embeddings
    - Feature count: 5000 features sufficient for BoW
 
 ## 🤝 Contributing

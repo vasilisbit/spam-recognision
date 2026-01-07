@@ -532,22 +532,22 @@
 \begin{itemize}
     \item \textbf{Μέγεθος Dataset}: Σύνολο 5,728 emails
     \item \textbf{Στήλες}:
-        \begin{itemize}
-            \item \textit{text}: Το περιεχόμενο του email (string)
-            \item \textit{spam}: Η ετικέτα κλάσης (binary: 0 = ham, 1 = spam)
-        \end{itemize}
+          \begin{itemize}
+              \item \textit{text}: Το περιεχόμενο του email (string)
+              \item \textit{spam}: Η ετικέτα κλάσης (binary: 0 = ham, 1 = spam)
+          \end{itemize}
     \item \textbf{Κατανομή Κλάσεων}:
-        \begin{itemize}
-            \item Ham (legitimate emails): 4,360 δείγματα (76.1\%)
-            \item Spam (unwanted emails): 1,368 δείγματα (23.9\%)
-        \end{itemize}
+          \begin{itemize}
+              \item Ham (legitimate emails): 4,360 δείγματα (76.1\%)
+              \item Spam (unwanted emails): 1,368 δείγματα (23.9\%)
+          \end{itemize}
     \item \textbf{Ποικιλία Περιεχομένου}: Τα email περιλαμβάνουν διάφορους τύπους spam:
-        \begin{itemize}
-            \item Διαφημιστικά μηνύματα (product promotions)
-            \item Οικονομικές απάτες (financial scams)
-            \item Προσφορές φαρμάκων (pharmaceutical spam)
-            \item Phishing attempts
-        \end{itemize}
+          \begin{itemize}
+              \item Διαφημιστικά μηνύματα (product promotions)
+              \item Οικονομικές απάτες (financial scams)
+              \item Προσφορές φαρμάκων (pharmaceutical spam)
+              \item Phishing attempts
+          \end{itemize}
     \item \textbf{Πραγματικά Δεδομένα}: Το dataset προέρχεται από πραγματικά email, διατηρώντας τη φυσική ποικιλομορφία και πολυπλοκότητα της γλώσσας.
 \end{itemize}
 
@@ -556,25 +556,25 @@
 Το dataset χωρίζεται σε τρία υποσύνολα για την εκπαίδευση και αξιολόγηση των μοντέλων:
 
 \begin{itemize}
-    \item \textbf{Training Set}: 2,000 emails (35\% του συνόλου)
+    \item \textbf{Training Set}: 4,582 emails (80\% του συνόλου)
           \begin{itemize}
               \item Χρησιμοποιείται για την εκπαίδευση των μοντέλων
-              \item Ham: 1,487 emails (74.4\%)
-              \item Spam: 513 emails (25.6\%)
+              \item Ham: 3,468 emails (75.69\%)
+              \item Spam: 1,114 emails (24.31\%)
           \end{itemize}
 
-    \item \textbf{Validation Set}: 1,000 emails (17.5\% του συνόλου)
+    \item \textbf{Validation Set}: 572 emails (10\% του συνόλου)
           \begin{itemize}
               \item Χρησιμοποιείται για την επιλογή hyperparameters
-              \item Ham: 780 emails (78.0\%)
-              \item Spam: 220 emails (22.0\%)
+              \item Ham: 446 emails (77.97\%)
+              \item Spam: 126 emails (22.03\%)
           \end{itemize}
 
-    \item \textbf{Test Set}: 2,728 emails (47.6\% του συνόλου)
+    \item \textbf{Test Set}: 574 emails (10\% του συνόλου)
           \begin{itemize}
               \item Χρησιμοποιείται για την τελική αξιολόγηση
-              \item Ham: 2,093 emails (76.7\%)
-              \item Spam: 635 emails (23.3\%)
+              \item Ham: 446 emails (77.70\%)
+              \item Spam: 128 emails (22.30\%)
           \end{itemize}
 \end{itemize}
 
@@ -1410,9 +1410,9 @@
         \hline
         \textbf{Set}    & \textbf{Emails} & \textbf{\% Total} & \textbf{Ham} & \textbf{Spam} & \textbf{Spam \%} \\\\
         \hline
-        Training        & 2,000           & 34.9\%            & 1,487        & 513           & 25.6\%           \\\\
-        Validation      & 1,000           & 17.5\%            & 780          & 220           & 22.2\%           \\\\
-        Test            & 2,728           & 47.6\%            & 2,093        & 635           & 23.3\%           \\\\
+        Training        & 4,582           & 80.0\%            & 3,461        & 1,121         & 24.5\%           \\\\
+        Validation      & 572             & 10.0\%            & 436          & 136           & 23.8\%           \\\\
+        Test            & 574             & 10.0\%            & 437          & 137           & 23.9\%           \\\\
         \hline
         \textbf{Σύνολο} & 5,728           & 100\%             & 4,360        & 1,368         & 23.9\%           \\\\
         \hline
@@ -1423,23 +1423,23 @@
 \subsubsection*{Αιτιολόγηση Επιλογών}
 
 \begin{enumerate}
-    \item \textbf{Training Set (2,000 emails)}:
+    \item \textbf{Training Set (4,582 emails)}:
           \begin{itemize}
-              \item Επαρκές μέγεθος για εκπαίδευση μοντέλων χωρίς overfitting
-              \item Περιλαμβάνει 1,487 ham και 513 spam emails
-              \item Αναλογία spam 25.7\% (παρόμοια με το συνολικό 23.9\%)
+              \item Μεγάλο μέγεθος (80\%) για καλύτερη εκπαίδευση μοντέλων
+              \item Περιλαμβάνει 3,461 ham και 1,121 spam emails
+              \item Αναλογία spam 24.5\% (παρόμοια με το συνολικό 23.9\%)
           \end{itemize}
 
-    \item \textbf{Validation Set (1,000 emails)}:
+    \item \textbf{Validation Set (572 emails)}:
           \begin{itemize}
               \item Χρησιμοποιείται για hyperparameter tuning και model selection
-              \item Μέγεθος \(\frac{1}{2}\) του training set, επαρκές για αξιόπιστη αξιολόγηση
+              \item 10\% του dataset, επαρκές για αξιόπιστη αξιολόγηση
               \item Αποτρέπει το overfitting στο test set από πολλαπλές δοκιμές
           \end{itemize}
 
-    \item \textbf{Test Set (2,728 emails = υπόλοιπα)}:
+    \item \textbf{Test Set (574 emails)}:
           \begin{itemize}
-              \item Το μεγαλύτερο τμήμα (47.6\%) για \textit{unbiased} τελική αξιολόγηση
+              \item 10\% του dataset για \textit{unbiased} τελική αξιολόγηση
               \item Παρέχει στατιστικά σημαντικά αποτελέσματα με υψηλή αξιοπιστία
               \item Δεν χρησιμοποιείται ποτέ κατά την εκπαίδευση ή tuning
           \end{itemize}
@@ -1455,9 +1455,9 @@
 
 όπου:
 \begin{align}
-    |D_{train}| & = 2000 \\\\
-    |D_{val}|   & = 1000 \\\\
-    |D_{test}|  & = 2728
+    |D_{train}| & = 4582 \\\\
+    |D_{val}|   & = 572  \\\\
+    |D_{test}|  & = 574
 \end{align}
 
 \subsection{Stratified Split}
@@ -1660,30 +1660,30 @@ X_test_bow = vectorizer.transform(test_df['clean_text'])
 \subsubsection*{Παράμετροι και Αιτιολόγηση}
 
 \begin{enumerate}
-\item \textbf{max\_features=5000}:
-\begin{itemize}
-    \item Περιορίζουμε το λεξιλόγιο στις 5000 πιο συχνές λέξεις
-    \item Αποφεύγουμε την εκρηκτική διαστατικότητα (full vocabulary >> 5000)
-    \item Οι σπάνιες λέξεις (hapax legomena) συνήθως δεν γενικεύουν καλά
-    \item Balance μεταξύ πληροφορίας και υπολογιστικής πολυπλοκότητας
-\end{itemize}
+    \item \textbf{max\_features=5000}:
+          \begin{itemize}
+              \item Περιορίζουμε το λεξιλόγιο στις 5000 πιο συχνές λέξεις
+              \item Αποφεύγουμε την εκρηκτική διαστατικότητα (full vocabulary >> 5000)
+              \item Οι σπάνιες λέξεις (hapax legomena) συνήθως δεν γενικεύουν καλά
+              \item Balance μεταξύ πληροφορίας και υπολογιστικής πολυπλοκότητας
+          \end{itemize}
 
-\item \textbf{Default term frequency (TF)}:
-\begin{itemize}
-\item Χρήση \textbf{term frequency} (counts) ως βάρη
-\item Κάθε διάσταση: ο αριθμός εμφανίσεων της λέξης στο email
-\item Πιο πλούσια αναπαράσταση από binary (presence/absence)
-\item Κατάλληλο για Multinomial Naive Bayes
-\item Λαμβάνει υπόψη τη συχνότητα εμφάνισης λέξεων
-όπου:
+    \item \textbf{Default term frequency (TF)}:
+          \begin{itemize}
+              \item Χρήση \textbf{term frequency} (counts) ως βάρη
+              \item Κάθε διάσταση: ο αριθμός εμφανίσεων της λέξης στο email
+              \item Πιο πλούσια αναπαράσταση από binary (presence/absence)
+              \item Κατάλληλο για Multinomial Naive Bayes
+              \item Λαμβάνει υπόψη τη συχνότητα εμφάνισης λέξεων
+                    όπου:
 
-\begin{equation}
-    x_i = \begin{cases}
-        1, & \text{αν } w_i \in d    \\\\
-        0, & \text{αν } w_i \notin d
-    \end{cases}
-\end{equation}
-\end{itemize}
+                    \begin{equation}
+                        x_i = \begin{cases}
+                            1, & \text{αν } w_i \in d    \\\\
+                            0, & \text{αν } w_i \notin d
+                        \end{cases}
+                    \end{equation}
+          \end{itemize}
 \end{enumerate}
 
 \subsubsection*{Διαστάσεις Matrices}
@@ -1691,9 +1691,9 @@ X_test_bow = vectorizer.transform(test_df['clean_text'])
 Οι sparse matrices που προκύπτουν έχουν διαστάσεις:
 
 \begin{itemize}
-    \item \textbf{Training}: \((2000, 5000)\) - 2,000 emails × 5,000 features
-    \item \textbf{Validation}: \((1000, 5000)\) - 1,000 emails × 5,000 features
-    \item \textbf{Test}: \((2728, 5000)\) - 2,728 emails × 5,000 features
+    \item \textbf{Training}: \((4582, 5000)\) - 4,582 emails × 5,000 features
+    \item \textbf{Validation}: \((572, 5000)\) - 572 emails × 5,000 features
+    \item \textbf{Test}: \((574, 5000)\) - 574 emails × 5,000 features
 \end{itemize}
 
 Οι matrices είναι \textbf{sparse} (πολλά zeros) γιατί κάθε email περιέχει μόνο ένα μικρό υποσύνολο του λεξιλογίου. Οι τιμές είναι \textbf{non-negative integers} (αριθμοί εμφανίσεων).
@@ -1760,9 +1760,9 @@ X_test_emb = model.encode(test_df['clean_text'].tolist())
 \subsubsection*{Διαστάσεις Embeddings}
 
 \begin{itemize}
-    \item \textbf{Training}: \((2000, 384)\) - 2,000 emails × 384 dimensions
-    \item \textbf{Validation}: \((1000, 384)\) - 1,000 emails × 384 dimensions
-    \item \textbf{Test}: \((2728, 384)\) - 2,728 emails × 384 dimensions
+    \item \textbf{Training}: \((4582, 384)\) - 4,582 emails × 384 dimensions
+    \item \textbf{Validation}: \((572, 384)\) - 572 emails × 384 dimensions
+    \item \textbf{Test}: \((574, 384)\) - 574 emails × 384 dimensions
 \end{itemize}
 
 \subsubsection*{Πλεονεκτήματα Sentence Embeddings}
@@ -2117,14 +2117,14 @@ logreg_model.fit(X_train_emb, y_train)
 \begin{enumerate}
     \item \textbf{Training Phase}:
           \begin{itemize}
-              \item Εκπαίδευση μοντέλων \textbf{μόνο} στο training set (2,000 samples)
+              \item Εκπαίδευση μοντέλων \textbf{μόνο} στο training set (4,582 samples)
               \item Fit των transformers (CountVectorizer, PCA) μόνο στο training
               \item Χρήση \textit{random\_state=42} για reproducibility
           \end{itemize}
 
     \item \textbf{Validation Phase}:
           \begin{itemize}
-              \item Αξιολόγηση όλων των συνδυασμών στο validation set (1,000 samples)
+              \item Αξιολόγηση όλων των συνδυασμών στο validation set (572 samples)
               \item Επιλογή hyperparameters με βάση F1-score
               \item Επιλογή καλύτερου μοντέλου και feature representation
               \item \textbf{Δεν} γίνεται retraining με validation data
@@ -2132,7 +2132,7 @@ logreg_model.fit(X_train_emb, y_train)
 
     \item \textbf{Test Phase}:
           \begin{itemize}
-              \item Τελική αξιολόγηση του επιλεγμένου μοντέλου στο test set (2,728 samples)
+              \item Τελική αξιολόγηση του επιλεγμένου μοντέλου στο test set (574 samples)
               \item Το test set \textbf{δεν χρησιμοποιείται} για καμία απόφαση
               \item Unbiased εκτίμηση της πραγματικής απόδοσης
           \end{itemize}
@@ -2735,12 +2735,12 @@ plt.show()
         \hline
         \textbf{Μοντέλο}    & \textbf{Χαρακτηριστικά} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{AUC} \\\\
         \hline
-        Naive Bayes         & BoW (5000)              & 0.9439             & 0.9811          & 0.9622            & 0.9959       \\\\
-        SVM (Polynomial)    & Embeddings (384)        & 0.9587             & 0.9496          & 0.9541            & 0.9978       \\\\
-        Logistic Regression & Embeddings (384)        & 0.9391             & 0.9465          & 0.9427            & 0.9949       \\\\
-        k-NN (\(k=1\))      & Embeddings (384)        & 0.9698             & 0.8583          & 0.9106            & 0.9251       \\\\
-        SVM + PCA(90\%)     & PCA (112 dims)          & 0.9887             & 0.8236          & 0.8986            & 0.9969       \\\\
-        LogReg + PCA(10)    & PCA (10 dims)           & 0.8891             & 0.8961          & 0.8925            & 0.9887       \\\\
+        SVM (Polynomial)    & Embeddings (384)        & 0.9762             & 0.9609          & 0.9685            & 0.9993       \\\\
+        Naive Bayes         & BoW (5000)              & 0.9609             & 0.9609          & 0.9609            & 0.9962       \\\\
+        Logistic Regression & Embeddings (384)        & 0.9603             & 0.9453          & 0.9528            & 0.9949       \\\\
+        k-NN (\(k=1\))      & Embeddings (384)        & 1.0000             & 0.8984          & 0.9465            & 0.9492       \\\\
+        SVM + PCA(90\%)     & PCA (115 dims)          & 0.9915             & 0.9062          & 0.9469            & 0.9984       \\\\
+        LogReg + PCA(10)    & PCA (10 dims)           & 0.9040             & 0.8828          & 0.8933            & 0.9889       \\\\
         \hline
     \end{tabular}
     \caption{Συγκριτικά αποτελέσματα όλων των μοντέλων στο test set}
@@ -2757,9 +2757,9 @@ plt.show()
         \hline
         \textbf{Στατιστικό} & \textbf{Precision} & \textbf{Recall}  & \textbf{F1-Score} & \textbf{AUC}     \\\\
         \hline
-        Μέσος όρος          & 0.9482             & 0.9092           & 0.9268            & 0.9832           \\\\
-        Τυπική απόκλιση     & 0.0341             & 0.0605           & 0.0299            & 0.0287           \\\\
-        Εύρος               & [0.8891, 0.9887]   & [0.8236, 0.9811] & [0.8925, 0.9622]  & [0.9251, 0.9978] \\\\
+        Μέσος όρος          & 0.9655             & 0.9258           & 0.9448            & 0.9878           \\\\
+        Τυπική απόκλιση     & 0.0337             & 0.0312           & 0.0280            & 0.0198           \\\\
+        Εύρος               & [0.9040, 1.0000]   & [0.8828, 0.9609] & [0.8933, 0.9685]  & [0.9492, 0.9993] \\\\
         \hline
     \end{tabular}
     \caption{Στατιστικά στοιχεία απόδοσης μοντέλων}
@@ -2776,7 +2776,7 @@ plt.show()
 
 \section{Naive Bayes με Bag-of-Words}
 
-Το Naive Bayes αποτελεί το baseline μοντέλο με απλή υλοποίηση και BoW features. Παρά την απλότητά του, επιτυγχάνει το \textbf{υψηλότερο F1-Score} (0.9622) μεταξύ όλων των μοντέλων.
+Το Naive Bayes αποτελεί το baseline μοντέλο με απλή υλοποίηση και BoW features. Παρά την απλότητά του, επιτυγχάνει εξαιρετική απόδοση με F1-Score (0.9609), κατατασσόμενο \textbf{δεύτερο} μεταξύ όλων των μοντέλων.
 
 \subsection{Απόδοση στο Test Set}
 
@@ -2786,10 +2786,10 @@ plt.show()
         \hline
         \textbf{Μετρική} & \textbf{Τιμή} \\\\
         \hline
-        Precision        & 0.9439        \\\\
-        Recall           & 0.9811        \\\\
-        F1-Score         & 0.9622        \\\\
-        ROC-AUC          & 0.9959        \\\\
+        Precision        & 0.9609        \\\\
+        Recall           & 0.9609        \\\\
+        F1-Score         & 0.9609        \\\\
+        ROC-AUC          & 0.9962        \\\\
         \hline
     \end{tabular}
     \caption{Naive Bayes αποτελέσματα}
@@ -2800,28 +2800,28 @@ plt.show()
 \begin{table}[H]
     \centering
     \begin{tabular}{cc|cc}
-        \multicolumn{2}{c}{}                             & \multicolumn{2}{c}{\textbf{Predicted}}                                \\
-                                                         &                                        & Ham           & Spam         \\
+        \multicolumn{2}{c}{}                                & \multicolumn{2}{c}{\textbf{Predicted}}                               \\
+                                                            &                                        & Ham          & Spam         \\
         \hline
-        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (2093)                             & 2056 (98.2\%) & 37 (1.8\%)   \\
-                                                         & Spam (635)                             & 12 (1.9\%)    & 623 (98.1\%) \\
+        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (446)                              & 441 (98.9\%) & 5 (1.1\%)    \\
+                                                            & Spam (128)                             & 5 (3.9\%)    & 123 (96.1\%) \\
     \end{tabular}
     \caption{Confusion Matrix για Naive Bayes}
 \end{table}
 
 \textbf{Ανάλυση:}
 \begin{itemize}
-    \item \textbf{True Negatives (TN)}: 2056 - Σωστά αναγνωρισμένα ham emails
-    \item \textbf{False Positives (FP)}: 37 - Legitimate emails λανθασμένα ταξινομημένα ως spam
-    \item \textbf{False Negatives (FN)}: 12 - Spam emails που ξέφυγαν
-    \item \textbf{True Positives (TP)}: 623 - Σωστά ανιχνευμένα spam
-    \item \textbf{Ποσοστό λάθους}: 1.8\% (49/2728)
+    \item \textbf{True Negatives (TN)}: 441 - Σωστά αναγνωρισμένα ham emails
+    \item \textbf{False Positives (FP)}: 5 - Legitimate emails λανθασμένα ταξινομημένα ως spam
+    \item \textbf{False Negatives (FN)}: 5 - Spam emails που ξέφυγαν
+    \item \textbf{True Positives (TP)}: 123 - Σωστά ανιχνευμένα spam
+    \item \textbf{Ποσοστό λάθους}: 1.7\% (10/574)
 \end{itemize}
 
 \textbf{Ισχυρά Σημεία:}
 \begin{itemize}
-    \item Εξαιρετικό \textbf{Recall} (98.1\%) - ανιχνεύει σχεδόν όλα τα spam
-    \item Υψηλότερο \textbf{ROC-AUC} (99.5\%) μεταξύ όλων των μοντέλων
+    \item Εξαιρετικό \textbf{Recall} (96.09\%) - ανιχνεύει τα περισσότερα spam emails
+    \item Υψηλό \textbf{ROC-AUC} (99.62\%) με εξαιρετική ικανότητα διαχωρισμού κλάσεων
     \item Πολύ \textbf{γρήγορη} εκπαίδευση και πρόβλεψη
     \item Καλή \textbf{ερμηνευσιμότητα} (μπορούν να εξαχθούν σημαντικές λέξεις)
 \end{itemize}
@@ -2859,9 +2859,9 @@ plt.show()
         \hline
         \textbf{Μετρική} & \textbf{Τιμή} \\\\
         \hline
-        Precision        & 0.9391        \\\\
-        Recall           & 0.9465        \\\\
-        F1-Score         & 0.9427        \\\\
+        Precision        & 0.9603        \\\\
+        Recall           & 0.9453        \\\\
+        F1-Score         & 0.9528        \\\\
         ROC-AUC          & 0.9949        \\\\
         \hline
     \end{tabular}
@@ -2873,22 +2873,22 @@ plt.show()
 \begin{table}[H]
     \centering
     \begin{tabular}{cc|cc}
-        \multicolumn{2}{c}{}                             & \multicolumn{2}{c}{\textbf{Predicted}}                                \\\\
-                                                         &                                        & Ham           & Spam         \\\\
+        \multicolumn{2}{c}{}                                & \multicolumn{2}{c}{\textbf{Predicted}}                               \\\\
+                                                            &                                        & Ham          & Spam         \\\\
         \hline
-        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (2093)                             & 2063 (98.6\%) & 30 (1.4\%)   \\\\
-                                                         & Spam (635)                             & 34 (5.4\%)    & 601 (94.6\%) \\\\
+        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (446)                              & 441 (98.9\%) & 5 (1.1\%)    \\\\
+                                                            & Spam (128)                             & 7 (5.5\%)    & 121 (94.5\%) \\\\
     \end{tabular}
     \caption{Confusion Matrix για Logistic Regression}
 \end{table}
 
 \textbf{Ανάλυση:}
 \begin{itemize}
-    \item \textbf{True Negatives (TN)}: 2063 - Σωστά αναγνωρισμένα ham emails
-    \item \textbf{False Positives (FP)}: 30 - Legitimate emails λανθασμένα ταξινομημένα ως spam
-    \item \textbf{False Negatives (FN)}: 34 - Spam emails που ξέφυγαν
-    \item \textbf{True Positives (TP)}: 601 - Σωστά ανιχνευμένα spam
-    \item \textbf{Ποσοστό λάθους}: 2.3\% (64/2728)
+    \item \textbf{True Negatives (TN)}: 441 - Σωστά αναγνωρισμένα ham emails
+    \item \textbf{False Positives (FP)}: 5 - Legitimate emails λανθασμένα ταξινομημένα ως spam
+    \item \textbf{False Negatives (FN)}: 7 - Spam emails που ξέφυγαν
+    \item \textbf{True Positives (TP)}: 121 - Σωστά ανιχνευμένα spam
+    \item \textbf{Ποσοστό λάθους}: 2.1\% (12/574)
 \end{itemize}
 
 \textbf{Χαρακτηριστικά:}
@@ -2951,10 +2951,10 @@ plt.show()
         \hline
         \textbf{Μετρική} & \textbf{Τιμή} \\\\
         \hline
-        Precision        & 0.9698        \\\\
-        Recall           & 0.8583        \\\\
-        F1-Score         & 0.9106        \\\\
-        ROC-AUC          & 0.9251        \\\\
+        Precision        & 1.0000        \\\\
+        Recall           & 0.8984        \\\\
+        F1-Score         & 0.9465        \\\\
+        ROC-AUC          & 0.9492        \\\\
         \hline
     \end{tabular}
     \caption{k-NN (\(k=1\)) αποτελέσματα στο test set}
@@ -2965,25 +2965,25 @@ plt.show()
 \begin{table}[H]
     \centering
     \begin{tabular}{cc|cc}
-        \multicolumn{2}{c}{}                             & \multicolumn{2}{c}{\textbf{Predicted}}                                \\\\
-                                                         &                                        & Ham           & Spam         \\\\
+        \multicolumn{2}{c}{}                                & \multicolumn{2}{c}{\textbf{Predicted}}                                \\\\
+                                                            &                                        & Ham           & Spam         \\\\
         \hline
-        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (2093)                             & 2077 (99.2\%) & 16 (0.8\%)   \\\\
-                                                         & Spam (635)                             & 90 (14.2\%)   & 545 (85.8\%) \\\\
+        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (446)                              & 446 (100.0\%) & 0 (0.0\%)    \\\\
+                                                            & Spam (128)                             & 13 (10.2\%)   & 115 (89.8\%) \\\\
     \end{tabular}
     \caption{Confusion Matrix για k-NN (\(k=1\))}
 \end{table}
 
 \textbf{Ανάλυση:}
 \begin{itemize}
-    \item \textbf{True Negatives (TN)}: 2077 - Σωστά αναγνωρισμένα ham emails
-    \item \textbf{False Positives (FP)}: 16 - Ελάχιστα legitimate emails λανθασμένα ταξινομημένα ως spam
-    \item \textbf{False Negatives (FN)}: 90 - Σημαντικός αριθμός spam emails που ξέφυγαν
-    \item \textbf{True Positives (TP)}: 545 - Σωστά ανιχνευμένα spam
-    \item \textbf{Ποσοστό λάθους}: 3.9\% (106/2728)
+    \item \textbf{True Negatives (TN)}: 446 - Σωστά αναγνωρισμένα ham emails
+    \item \textbf{False Positives (FP)}: 0 - Κανένα legitimate email λανθασμένα ταξινομημένο ως spam
+    \item \textbf{False Negatives (FN)}: 13 - Spam emails που ξέφυγαν
+    \item \textbf{True Positives (TP)}: 115 - Σωστά ανιχνευμένα spam
+    \item \textbf{Ποσοστό λάθους}: 2.3\% (13/574)
 \end{itemize}
 
-\textbf{Παρατήρηση:} Το k-NN με \(k=1\) έχει το \textbf{υψηλότερο Precision} (96.98\%) αλλά το \textbf{χαμηλότερο Recall} (85.83\%) μεταξύ όλων των μοντέλων, χάνοντας 90 spam emails (14.2\% των spam).
+\textbf{Παρατήρηση:} Το k-NN με \(k=1\) έχει \textbf{τέλειο Precision} (100.0\%) - κανένα false positive - αλλά χαμηλότερο \textbf{Recall} (89.84\%) μεταξύ των κορυφαίων μοντέλων, χάνοντας 13 spam emails (10.2\% των spam).
 
 \textbf{Αδυναμίες:}
 \begin{itemize}
@@ -3006,13 +3006,13 @@ plt.show()
         \hline
         \textbf{Μετρική} & \textbf{Τιμή}   \\\\
         \hline
-        Precision        & 0.9587          \\\\
-        Recall           & 0.9496          \\\\
-        F1-Score         & 0.9541          \\\\
-        ROC-AUC          & \textbf{0.9978} \\\\
+        Precision        & 0.9762          \\\\
+        Recall           & 0.9609          \\\\
+        F1-Score         & 0.9685          \\\\
+        ROC-AUC          & \textbf{0.9993} \\\\
         \hline
     \end{tabular}
-    \caption{SVM με Polynomial kernel - Δεύτερο υψηλότερο F1-Score, Υψηλότερο AUC}
+    \caption{SVM με Polynomial kernel - Υψηλότερο F1-Score και Υψηλότερο AUC}
 \end{table}
 
 \subsection{Confusion Matrix}
@@ -3020,29 +3020,29 @@ plt.show()
 \begin{table}[H]
     \centering
     \begin{tabular}{cc|cc}
-        \multicolumn{2}{c}{}                             & \multicolumn{2}{c}{\textbf{Predicted}}                                \\\\
-                                                         &                                        & Ham           & Spam         \\\\
+        \multicolumn{2}{c}{}                                & \multicolumn{2}{c}{\textbf{Predicted}}                               \\\\
+                                                            &                                        & Ham          & Spam         \\\\
         \hline
-        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (2093)                             & 2074 (99.1\%) & 19 (0.9\%)   \\\\
-                                                         & Spam (635)                             & 32 (5.0\%)    & 603 (95.0\%) \\\\
+        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (446)                              & 443 (99.3\%) & 3 (0.7\%)    \\\\
+                                                            & Spam (128)                             & 5 (3.9\%)    & 123 (96.1\%) \\\\
     \end{tabular}
     \caption{Confusion Matrix για SVM (Polynomial)}
 \end{table}
 
 \textbf{Ανάλυση:}
 \begin{itemize}
-    \item \textbf{True Negatives (TN)}: 2074 - Σωστά αναγνωρισμένα ham emails
-    \item \textbf{False Positives (FP)}: 19 - Ελάχιστα legitimate emails λανθασμένα ταξινομημένα ως spam
-    \item \textbf{False Negatives (FN)}: 32 - Spam emails που ξέφυγαν
-    \item \textbf{True Positives (TP)}: 603 - Σωστά ανιχνευμένα spam
-    \item \textbf{Ποσοστό λάθους}: 1.9\% (51/2728)
+    \item \textbf{True Negatives (TN)}: 443 - Σωστά αναγνωρισμένα ham emails
+    \item \textbf{False Positives (FP)}: 3 - Ελάχιστα legitimate emails λανθασμένα ταξινομημένα ως spam
+    \item \textbf{False Negatives (FN)}: 5 - Spam emails που ξέφυγαν
+    \item \textbf{True Positives (TP)}: 123 - Σωστά ανιχνευμένα spam
+    \item \textbf{Ποσοστό λάθους}: 1.4\% (8/574)
 \end{itemize}
 
 \textbf{Ισχυρά Σημεία:}
 \begin{itemize}
-    \item \textbf{Υψηλότερο AUC score} (99.78\%) - εξαιρετική ικανότητα διαχωρισμού κλάσεων
-    \item \textbf{Δεύτερο υψηλότερο F1-Score} (95.41\%) μετά το Naive Bayes
-    \item Εξαιρετική ισορροπία Precision (95.87\%) και Recall (94.96\%)
+    \item \textbf{Υψηλότερο F1-Score} (96.85\%) - καλύτερη συνολική απόδοση μεταξύ όλων των μοντέλων
+    \item \textbf{Υψηλότερο AUC score} (99.93\%) - εξαιρετική ικανότητα διαχωρισμού κλάσεων
+    \item Εξαιρετική ισορροπία Precision (97.62\%) και Recall (96.09\%)
     \item Το Polynomial kernel μοντελοποιεί πολυωνυμικές σχέσεις (degree=3)
     \item Robust σε overfitting με σωστή regularization
 \end{itemize}
@@ -3084,13 +3084,13 @@ plt.show()
         \hline
         \textbf{Μετρική} & \textbf{SVM (Poly)} & \textbf{SVM+PCA(90\%)} \\\\
         \hline
-        Διαστάσεις       & 384                 & 112                    \\\\
-        Precision        & 0.9587              & 0.9887                 \\\\
-        Recall           & 0.9496              & 0.8236                 \\\\
-        F1-Score         & 0.9541              & 0.8986                 \\\\
-        ROC-AUC          & 0.9978              & 0.9969                 \\\\
+        Διαστάσεις       & 384                 & 115                    \\\\
+        Precision        & 0.9762              & 0.9915                 \\\\
+        Recall           & 0.9609              & 0.9062                 \\\\
+        F1-Score         & 0.9685              & 0.9469                 \\\\
+        ROC-AUC          & 0.9993              & 0.9984                 \\\\
         \hline
-        \textbf{Διαφορά} & -                   & -0.0555                \\\\
+        \textbf{Διαφορά} & -                   & -0.0216                \\\\
         \hline
     \end{tabular}
     \caption{Σύγκριση SVM με και χωρίς PCA}
@@ -3101,22 +3101,22 @@ plt.show()
 \begin{table}[H]
     \centering
     \begin{tabular}{cc|cc}
-        \multicolumn{2}{c}{}                             & \multicolumn{2}{c}{\textbf{Predicted}}                                \\\\
-                                                         &                                        & Ham           & Spam         \\\\
+        \multicolumn{2}{c}{}                                & \multicolumn{2}{c}{\textbf{Predicted}}                               \\\\
+                                                            &                                        & Ham          & Spam         \\\\
         \hline
-        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (2093)                             & 2086 (99.7\%) & 7 (0.3\%)    \\\\
-                                                         & Spam (635)                             & 112 (17.6\%)  & 523 (82.4\%) \\\\
+        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (446)                              & 444 (99.6\%) & 2 (0.4\%)    \\\\
+                                                            & Spam (128)                             & 12 (9.4\%)   & 116 (90.6\%) \\\\
     \end{tabular}
-    \caption{Confusion Matrix για SVM με PCA (90\% variance, 112 dimensions)}
+    \caption{Confusion Matrix για SVM με PCA (90\% variance, 115 dimensions)}
 \end{table}
 
 \textbf{Ανάλυση:}
 \begin{itemize}
-    \item \textbf{True Negatives (TN)}: 2086 - Εξαιρετική απόδοση στην αναγνώριση ham
-    \item \textbf{False Positives (FP)}: 7 - Ελάχιστα λάθη (μόνο 0.3\% των ham)
-    \item \textbf{False Negatives (FN)}: 112 - Σημαντικά περισσότερα spam που ξέφυγαν (17.6\%)
-    \item \textbf{True Positives (TP)}: 523 - Μειωμένη ανίχνευση spam
-    \item \textbf{Ποσοστό λάθους}: 4.4\% (119/2728)
+    \item \textbf{True Negatives (TN)}: 444 - Εξαιρετική απόδοση στην αναγνώριση ham
+    \item \textbf{False Positives (FP)}: 2 - Ελάχιστα λάθη (μόνο 0.4\% των ham)
+    \item \textbf{False Negatives (FN)}: 12 - Περισσότερα spam που ξέφυγαν (9.4\%)
+    \item \textbf{True Positives (TP)}: 116 - Καλή ανίχνευση spam
+    \item \textbf{Ποσοστό λάθους}: 2.4\% (14/574)
 \end{itemize}
 
 \textbf{Σημαντική Παρατήρηση:} Η μείωση διαστάσεων (384 → 112) οδηγεί σε \textbf{υψηλότατο Precision} (98.87\%) αλλά \textbf{σημαντική πτώση Recall} (82.36\%). Το μοντέλο γίνεται πολύ συντηρητικό - σπάνια κάνει λάθος όταν προβλέπει spam, αλλά χάνει πολλά πραγματικά spam emails.
@@ -3139,12 +3139,12 @@ plt.show()
         \textbf{Μετρική} & \textbf{LogReg} & \textbf{LogReg+PCA(10)} \\\\
         \hline
         Διαστάσεις       & 384             & 10                      \\\\
-        Precision        & 0.9391          & 0.8891                  \\\\
-        Recall           & 0.9465          & 0.8961                  \\\\
-        F1-Score         & 0.9427          & 0.8925                  \\\\
-        ROC-AUC          & 0.9949          & 0.9887                  \\\\
+        Precision        & 0.9603          & 0.9040                  \\\\
+        Recall           & 0.9453          & 0.8828                  \\\\
+        F1-Score         & 0.9528          & 0.8933                  \\\\
+        ROC-AUC          & 0.9949          & 0.9889                  \\\\
         \hline
-        \textbf{Διαφορά} & -               & -0.0502                 \\\\
+        \textbf{Διαφορά} & -               & -0.0595                 \\\\
         \hline
     \end{tabular}
     \caption{Σύγκριση Logistic Regression με δραστική μείωση διαστάσεων}
@@ -3155,22 +3155,22 @@ plt.show()
 \begin{table}[H]
     \centering
     \begin{tabular}{cc|cc}
-        \multicolumn{2}{c}{}                             & \multicolumn{2}{c}{\textbf{Predicted}}                                \\\\
-                                                         &                                        & Ham           & Spam         \\\\
+        \multicolumn{2}{c}{}                                & \multicolumn{2}{c}{\textbf{Predicted}}                               \\\\
+                                                            &                                        & Ham          & Spam         \\\\
         \hline
-        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (2093)                             & 2054 (98.1\%) & 39 (1.9\%)   \\\\
-                                                         & Spam (635)                             & 66 (10.4\%)   & 569 (89.6\%) \\\\
+        \multirow{2}{*}{\rotatebox{90}{\textbf{Actual   }}} & Ham (446)                              & 434 (97.3\%) & 12 (2.7\%)   \\\\
+                                                            & Spam (128)                             & 15 (11.7\%)  & 113 (88.3\%) \\\\
     \end{tabular}
     \caption{Confusion Matrix για Logistic Regression με PCA (10 components)}
 \end{table}
 
 \textbf{Ανάλυση:}
 \begin{itemize}
-    \item \textbf{True Negatives (TN)}: 2054 - Σωστά αναγνωρισμένα ham emails
-    \item \textbf{False Positives (FP)}: 39 - Legitimate emails λανθασμένα ταξινομημένα ως spam
-    \item \textbf{False Negatives (FN)}: 66 - Spam emails που ξέφυγαν
-    \item \textbf{True Positives (TP)}: 569 - Σωστά ανιχνευμένα spam
-    \item \textbf{Ποσοστό λάθους}: 3.8\% (105/2728)
+    \item \textbf{True Negatives (TN)}: 434 - Σωστά αναγνωρισμένα ham emails
+    \item \textbf{False Positives (FP)}: 12 - Legitimate emails λανθασμένα ταξινομημένα ως spam
+    \item \textbf{False Negatives (FN)}: 15 - Spam emails που ξέφυγαν
+    \item \textbf{True Positives (TP)}: 113 - Σωστά ανιχνευμένα spam
+    \item \textbf{Ποσοστό λάθους}: 4.7\% (27/574)
 \end{itemize}
 
 \textbf{Σημαντική Παρατήρηση:} Η δραστική μείωση διαστάσεων (384 → 10, reduction 97.4\%) οδηγεί σε \textbf{ισορροπημένη υποβάθμιση} του Precision (-5\%) και Recall (-5.04\%). Αντίθετα με το SVM+PCA όπου το Recall έπεσε δραματικά, εδώ η απώλεια είναι ομοιόμορφη.
@@ -3277,19 +3277,19 @@ plt.show()
 Με βάση το F1-Score, η τελική κατάταξη είναι:
 
 \begin{enumerate}[1.]
-    \item \textbf{Naive Bayes (BoW)}: F1=0.9622 - \textit{Καλύτερη συνολική απόδοση}
-    \item \textbf{SVM (Polynomial)}: F1=0.9541, AUC=0.9978 - \textit{Υψηλότερο AUC, εξαιρετική ισορροπία}
-    \item \textbf{Logistic Regression}: F1=0.9427 - \textit{Καλή απόδοση με γρήγορη inference}
-    \item \textbf{k-NN (k=1)}: F1=0.9106 - \textit{Αποδεκτή απόδοση αλλά αργό}
-    \item \textbf{SVM + PCA(90\%)}: F1=0.8986 - \textit{Trade-off διαστάσεων με απώλεια Recall}
-    \item \textbf{LogReg + PCA(10)}: F1=0.8925 - \textit{Για resource-constrained systems}
+    \item \textbf{SVM (Polynomial)}: F1=0.9685, AUC=0.9993 - \textit{Καλύτερη συνολική απόδοση, υψηλότερο AUC, εξαιρετική ισορροπία}
+    \item \textbf{Naive Bayes (BoW)}: F1=0.9609, AUC=0.9962 - \textit{Δεύτερη καλύτερη απόδοση, πολύ γρήγορο}
+    \item \textbf{Logistic Regression}: F1=0.9528, AUC=0.9949 - \textit{Καλή απόδοση με γρήγορη inference}
+    \item \textbf{k-NN (k=1)}: F1=0.9465, AUC=0.9492 - \textit{Υψηλή precision αλλά αργό}
+    \item \textbf{SVM + PCA(90\%)}: F1=0.9469, AUC=0.9984 - \textit{Trade-off διαστάσεων με απώλεια Recall}
+    \item \textbf{LogReg + PCA(10)}: F1=0.8933, AUC=0.9889 - \textit{Για resource-constrained systems}
 \end{enumerate}
 
-\textbf{Κύριο Εύρημα:} Το \textbf{Naive Bayes με Bag-of-Words} επιτυγχάνει την καλύτερη απόδοση (F1=96.22\%), αποδεικνύοντας ότι για spam classification η απλή αναπαράσταση word counts είναι εξαιρετικά αποτελεσματική.
+\textbf{Κύριο Εύρημα:} Το \textbf{SVM με Polynomial kernel} επιτυγχάνει την καλύτερη απόδοση (F1=96.85\%, AUC=99.93\%), αποδεικνύοντας ότι η χρήση sentence embeddings με πολυωνυμικό kernel μπορεί να συλλάβει πολύπλοκες σχέσεις στα δεδομένα.
 
-\textbf{Δεύτερο Καλύτερο:} Το \textbf{SVM με Polynomial kernel} έχει το υψηλότερο AUC (99.78\%) και επιτυγχάνει F1=95.41\%, κάνοντάς το ιδανικό όταν η ικανότητα διαχωρισμού κλάσεων είναι κρίσιμη.
+\textbf{Δεύτερο Καλύτερο:} Το \textbf{Naive Bayes με Bag-of-Words} επιτυγχάνει F1=96.09\% με απλή αναπαράσταση word counts, προσφέροντας εξαιρετική ισορροπία απόδοσης και ταχύτητας.
 
-\textbf{Για Production:} Το \textbf{Logistic Regression} με F1=94.27\% προσφέρει εξαιρετική ισορροπία απόδοσης/ταχύτητας και είναι κατάλληλο για real-time spam filtering
+\textbf{Για Production:} Το \textbf{Logistic Regression} με F1=95.28\% προσφέρει εξαιρετική ισορροπία απόδοσης/ταχύτητας και είναι κατάλληλο για real-time spam filtering
 
 \begin{figure}[H]
     \centering
@@ -3324,7 +3324,7 @@ plt.show()
 
 \textbf{Πλεονεκτήματα:}
 \begin{itemize}
-    \item \textbf{Υψηλότερη απόδοση}: Naive Bayes με BoW πέτυχε F1=0.9622 (καλύτερο από όλα)
+    \item \textbf{Εξαιρετική απόδοση}: Naive Bayes με BoW πέτυχε F1=0.9609 (δεύτερο καλύτερο)
     \item \textbf{Ερμηνευσιμότητα}: Μπορούμε να εξάγουμε τις σημαντικότερες λέξεις για spam/ham
     \item \textbf{Απλότητα}: Εύκολη υλοποίηση και κατανόηση
     \item \textbf{Ταχύτητα}: Πολύ γρήγορη εκπαίδευση (δευτερόλεπτα)
@@ -3333,7 +3333,7 @@ plt.show()
 
 \textbf{Μειονεκτήματα:}
 \begin{itemize}
-    \item \textbf{Αραιότητα}: Sparse matrix 2728×5000 με πολλά μηδενικά
+    \item \textbf{Αραιότητα}: Sparse matrix 574×5000 με πολλά μηδενικά
     \item \textbf{Απώλεια σημασιολογίας}: Δεν κατανοεί συνώνυμα ή παραφράσεις
     \item \textbf{Εξάρτηση από λεξιλόγιο}: Δυσκολεύεται με out-of-vocabulary λέξεις
     \item \textbf{Μέγεθος}: Μεγάλο μέγεθος χαρακτηριστικών (5000 dimensions)
@@ -3356,7 +3356,7 @@ plt.show()
 \begin{itemize}
     \item \textbf{Πολυπλοκότητα}: Απαιτεί pre-trained BERT model
     \item \textbf{Υπολογιστικό κόστος}: Αργή εξαγωγή embeddings (GPU needed)
-    \item \textbf{Μικρότερη απόδοση}: SVM (Polynomial) F1=0.9541 vs Naive Bayes F1=0.9622
+    \item \textbf{Καλύτερη απόδοση}: SVM (Polynomial) F1=0.9685 vs Naive Bayes F1=0.9609
     \item \textbf{Μνήμη}: Απαιτεί περισσότερη μνήμη για το BERT model
 \end{itemize}
 
@@ -3366,16 +3366,16 @@ plt.show()
     \centering
     \begin{tabular}{lcc}
         \hline
-        \textbf{Κριτήριο}             & \textbf{BoW} & \textbf{Embeddings} \\\\
+        \textbf{Κριτήριο}       & \textbf{BoW}          & \textbf{Embeddings} \\\\
         \hline
-        Καλύτερο F1-Score             & \textbf{0.9622} & 0.9541        \\\\
-        Διαστάσεις                    & 5000         & \textbf{384}  \\\\
-        Ταχύτητα εκπαίδευσης          & \textbf{Πολύ γρήγορη} & Γρήγορη \\\\
-        Ταχύτητα inference            & \textbf{Άμεση} & Γρήγορη     \\\\
-        Ερμηνευσιμότητα               & \textbf{Υψηλή} & Χαμηλή      \\\\
-        Σημασιολογική κατανόηση       & Χαμηλή       & \textbf{Υψηλή} \\\\
-        Απαιτήσεις μνήμης             & Μέτριες      & \textbf{Υψηλές} \\\\
-        Generalization                & Μέτρια       & \textbf{Καλή} \\\\
+        Καλύτερο F1-Score       & \textbf{0.9609}       & 0.9528              \\\\
+        Διαστάσεις              & 5000                  & \textbf{384}        \\\\
+        Ταχύτητα εκπαίδευσης    & \textbf{Πολύ γρήγορη} & Γρήγορη             \\\\
+        Ταχύτητα inference      & \textbf{Άμεση}        & Γρήγορη             \\\\
+        Ερμηνευσιμότητα         & \textbf{Υψηλή}        & Χαμηλή              \\\\
+        Σημασιολογική κατανόηση & Χαμηλή                & \textbf{Υψηλή}      \\\\
+        Απαιτήσεις μνήμης       & Μέτριες               & \textbf{Υψηλές}     \\\\
+        Generalization          & Μέτρια                & \textbf{Καλή}       \\\\
         \hline
     \end{tabular}
     \caption{Σύγκριση BoW vs Sentence Embeddings}
@@ -3434,13 +3434,13 @@ plt.show()
     \small
     \begin{tabular}{cccl}
         \hline
-        \textbf{k} & \textbf{F1-Score} & \textbf{Recall} & \textbf{Παρατήρηση}                \\\\
+        \textbf{k} & \textbf{F1-Score} & \textbf{Recall} & \textbf{Παρατήρηση}            \\\\
         \hline
-        1          & \textbf{0.9305}   & 0.8818          & Υψηλή διακύμανση, overfitting     \\\\
-        3          & 0.9275            & 0.8727          & Ισορροπημένη απόδοση               \\\\
-        5          & 0.9095            & 0.8455          & Recall μειώνεται                   \\\\
-        11         & 0.8933            & 0.8182          & Πολύ μαλακό decision boundary      \\\\
-        21         & 0.8766            & 0.7909          & Underfitting, χάνει πολλά spam    \\\\
+        1          & \textbf{0.9305}   & 0.8818          & Υψηλή διακύμανση, overfitting  \\\\
+        3          & 0.9275            & 0.8727          & Ισορροπημένη απόδοση           \\\\
+        5          & 0.9095            & 0.8455          & Recall μειώνεται               \\\\
+        11         & 0.8933            & 0.8182          & Πολύ μαλακό decision boundary  \\\\
+        21         & 0.8766            & 0.7909          & Underfitting, χάνει πολλά spam \\\\
         \hline
     \end{tabular}
     \caption{Επίδραση του k στην απόδοση k-NN (validation set)}
@@ -3469,11 +3469,11 @@ plt.show()
     \centering
     \begin{tabular}{lccc}
         \hline
-        \textbf{Kernel}       & \textbf{F1-Score} & \textbf{AUC} & \textbf{Training Time} \\\\
+        \textbf{Kernel}       & \textbf{F1-Score} & \textbf{AUC}    & \textbf{Training Time} \\\\
         \hline
-        Linear                & 0.9350            & 0.9920       & Γρήγορο                \\\\
-        Polynomial (degree=3) & \textbf{0.9541}   & \textbf{0.9978} & Μέτριο              \\\\
-        RBF                   & 0.9420            & 0.9945       & Αργό                   \\\\
+        Linear                & 0.9350            & 0.9920          & Γρήγορο                \\\\
+        Polynomial (degree=3) & \textbf{0.9685}   & \textbf{0.9993} & Μέτριο                 \\\\
+        RBF                   & 0.9420            & 0.9945          & Αργό                   \\\\
         \hline
     \end{tabular}
     \caption{Σύγκριση SVM kernels (test set)}
@@ -3515,13 +3515,13 @@ plt.show()
     \centering
     \begin{tabular}{ccccc}
         \hline
-        \textbf{Variance} & \textbf{Components} & \textbf{F1-Score} & \textbf{Διαφορά} & \textbf{Speed-up} \\\\
+        \textbf{Variance} & \textbf{Components}  & \textbf{F1-Score} & \textbf{Διαφορά} & \textbf{Speed-up} \\\\
         \hline
-        100\% (No PCA)    & 384                 & 0.9541            & -                & 1.0×              \\\\
-        99\%              & 230 (40\% reduction) & ~0.94             & -1.5\%           & 1.3×              \\\\
-        95\%              & 147 (62\% reduction) & ~0.92             & -3.5\%           & 1.8×              \\\\
-        90\%              & 112 (71\% reduction) & 0.8986            & -5.55\%          & 2.2×              \\\\
-        Fixed 10 (LogReg) & 10 (97\% reduction)  & 0.8925            & -5.02\%          & 5.0×              \\\\
+        100\% (No PCA)    & 384                  & 0.9685            & -                & 1.0×              \\\\
+        99\%              & 230 (40\% reduction) & ~0.96             & -0.8\%           & 1.3×              \\\\
+        95\%              & 147 (62\% reduction) & ~0.95             & -1.9\%           & 1.8×              \\\\
+        90\%              & 115 (70\% reduction) & 0.9469            & -2.16\%          & 2.2×              \\\\
+        Fixed 10 (LogReg) & 10 (97\% reduction)  & 0.8933            & -7.52\%          & 5.0×              \\\\
         \hline
     \end{tabular}
     \caption{Trade-off μεταξύ variance retention και απόδοσης}
@@ -3557,12 +3557,12 @@ plt.show()
     \centering
     \begin{tabular}{lccc}
         \hline
-        \textbf{Μοντέλο}        & \textbf{Val F1} & \textbf{Test F1} & \textbf{Διαφορά} \\\\
+        \textbf{Μοντέλο}    & \textbf{Val F1} & \textbf{Test F1} & \textbf{Διαφορά} \\\\
         \hline
-        Naive Bayes             & 0.9650          & 0.9622           & -0.28\%          \\\\
-        SVM (Polynomial)        & 0.9520          & 0.9541           & +0.21\%          \\\\
-        Logistic Regression     & 0.9410          & 0.9427           & +0.17\%          \\\\
-        k-NN (\(k=1\))          & 0.9305          & 0.9106           & -1.99\%          \\\\
+        Naive Bayes         & 0.9650          & 0.9609           & -0.41\%          \\\\
+        SVM (Polynomial)    & 0.9520          & 0.9685           & +1.65\%          \\\\
+        Logistic Regression & 0.9410          & 0.9528           & +1.18\%          \\\\
+        k-NN (\(k=1\))      & 0.9305          & 0.9465           & +1.60\%          \\\\
         \hline
     \end{tabular}
     \caption{Validation vs Test set performance}
@@ -3584,9 +3584,9 @@ plt.show()
 Το dataset αποτελείται από \textbf{5,728 emails} συνολικά:
 
 \begin{itemize}
-    \item \textbf{Training set}: 4,000 emails (70\%)
-    \item \textbf{Validation set}: 1,000 emails (17.5\%)
-    \item \textbf{Test set}: 728 emails (12.5\%)
+    \item \textbf{Training set}: 4,582 emails (80\%)
+    \item \textbf{Validation set}: 572 emails (10\%)
+    \item \textbf{Test set}: 574 emails (10\%)
 \end{itemize}
 
 \textbf{Περιορισμοί:}
@@ -3605,11 +3605,11 @@ plt.show()
     \centering
     \begin{tabular}{lccc}
         \hline
-        \textbf{Σύνολο} & \textbf{Ham} & \textbf{Spam} & \textbf{Λόγος} \\\\
+        \textbf{Σύνολο} & \textbf{Ham}   & \textbf{Spam}  & \textbf{Λόγος} \\\\
         \hline
-        Training        & 3,364 (84.1\%) & 636 (15.9\%)   & 5.3:1          \\\\
-        Validation      & 838 (83.8\%)   & 162 (16.2\%)   & 5.2:1          \\\\
-        Test            & 2,093 (74.2\%) & 635 (25.8\%)   & 3.3:1          \\\\
+        Training        & 3,468 (75.7\%) & 1,114 (24.3\%) & 3.1:1          \\\\
+        Validation      & 446 (78.0\%)   & 126 (22.0\%)   & 3.5:1          \\\\
+        Test            & 446 (77.7\%)   & 128 (22.3\%)   & 3.5:1          \\\\
         \hline
     \end{tabular}
     \caption{Κατανομή κλάσεων στα σύνολα δεδομένων}
@@ -3639,13 +3639,13 @@ plt.show()
     \small
     \begin{tabular}{lcccc}
         \hline
-        \textbf{Μοντέλο}        & \textbf{Train Time} & \textbf{Inference} & \textbf{Μνήμη} & \textbf{Scalability} \\\\
+        \textbf{Μοντέλο}    & \textbf{Train Time} & \textbf{Inference} & \textbf{Μνήμη} & \textbf{Scalability} \\\\
         \hline
-        Naive Bayes             & \textbf{<1s}        & \textbf{Άμεση}     & Χαμηλή         & Εξαιρετική          \\\\
-        Logistic Regression     & \textbf{<5s}        & \textbf{Άμεση}     & Χαμηλή         & Εξαιρετική          \\\\
-        SVM (Polynomial)        & 10-30s              & Γρήγορη            & Μέτρια         & Καλή                \\\\
-        k-NN                    & Άμεση               & \textbf{Πολύ αργή} & \textbf{Υψηλή} & Κακή                \\\\
-        BERT embeddings         & 5-10min (GPU)       & Μέτρια             & Πολύ υψηλή     & Μέτρια              \\\\
+        Naive Bayes         & \textbf{<1s}        & \textbf{Άμεση}     & Χαμηλή         & Εξαιρετική           \\\\
+        Logistic Regression & \textbf{<5s}        & \textbf{Άμεση}     & Χαμηλή         & Εξαιρετική           \\\\
+        SVM (Polynomial)    & 10-30s              & Γρήγορη            & Μέτρια         & Καλή                 \\\\
+        k-NN                & Άμεση               & \textbf{Πολύ αργή} & \textbf{Υψηλή} & Κακή                 \\\\
+        BERT embeddings     & 5-10min (GPU)       & Μέτρια             & Πολύ υψηλή     & Μέτρια               \\\\
         \hline
     \end{tabular}
     \caption{Υπολογιστικές απαιτήσεις μοντέλων}
@@ -3711,17 +3711,17 @@ plt.show()
 
 \subsection{Βασικά Συμπεράσματα}
 
-\textbf{1. Bag-of-Words Υπερτερεί για Spam Classification}
+\textbf{1. Sentence Embeddings με SVM Υπερτερούν για Spam Classification}
 
-Παρά τη σημασιολογική ανωτερότητα των BERT embeddings, το \textbf{Bag-of-Words} πέτυχε την υψηλότερη απόδοση:
+Τα \textbf{BERT-based Sentence Embeddings} με SVM Polynomial kernel πέτυχαν την υψηλότερη απόδοση:
 
 \begin{itemize}
-    \item \textbf{Naive Bayes με BoW}: F1=96.22\%, Recall=98.11\% (BEST)
-    \item \textbf{SVM με Embeddings}: F1=95.41\%, AUC=99.78\%
-    \item \textbf{Διαφορά}: +0.81\% F1-Score υπέρ του BoW
+    \item \textbf{SVM με Embeddings}: F1=96.85\%, AUC=99.93\% (BEST)
+    \item \textbf{Naive Bayes με BoW}: F1=96.09\%, AUC=99.62\%
+    \item \textbf{Διαφορά}: +0.76\% F1-Score υπέρ του SVM με embeddings
 \end{itemize}
 
-\textbf{Εξήγηση:} Τα spam emails χαρακτηρίζονται από συγκεκριμένες \textit{λέξεις-κλειδιά} (π.χ. "free", "win", "prize") που το BoW αναγνωρίζει αποτελεσματικά. Η σημασιολογική κατανόηση δεν προσφέρει επιπλέον όφελος σε αυτό το domain.
+\textbf{Εξήγηση:} Τα sentence embeddings συλλαμβάνουν σημασιολογικές σχέσεις και πλούσια πληροφορία, ενώ το polynomial kernel μοντελοποιεί πολύπλοκες μη-γραμμικές σχέσεις μεταξύ features, παρέχοντας ανώτερη ικανότητα ταξινόμησης.
 
 \textbf{2. Απλά Μοντέλα Ανταγωνίζονται τα Πολύπλοκα}
 
@@ -3729,11 +3729,11 @@ plt.show()
     \centering
     \begin{tabular}{lcccc}
         \hline
-        \textbf{Μοντέλο}        & \textbf{F1} & \textbf{Πολυπλοκότητα} & \textbf{Ταχύτητα} & \textbf{Rank} \\\\
+        \textbf{Μοντέλο}       & \textbf{F1} & \textbf{Πολυπλοκότητα} & \textbf{Ταχύτητα} & \textbf{Rank} \\\\
         \hline
-        Naive Bayes (Simple)    & 96.22\%     & Πολύ χαμηλή            & Άμεση             & \textbf{1}    \\\\
-        SVM (Complex)           & 95.41\%     & Υψηλή                  & Μέτρια            & \textbf{2}    \\\\
-        Logistic Reg. (Simple)  & 94.27\%     & Χαμηλή                 & Άμεση             & 3             \\\\
+        SVM (Complex)          & 96.85\%     & Υψηλή                  & Μέτρια            & \textbf{1}    \\\\
+        Naive Bayes (Simple)   & 96.09\%     & Πολύ χαμηλή            & Άμεση             & \textbf{2}    \\\\
+        Logistic Reg. (Simple) & 95.28\%     & Χαμηλή                 & Άμεση             & 3             \\\\
         \hline
     \end{tabular}
 \end{table}
@@ -3750,9 +3750,9 @@ plt.show()
 Τα αποτελέσματα επιβεβαίωσαν το κλασικό trade-off:
 
 \begin{itemize}
-    \item \textbf{Υψηλό Recall} (Naive Bayes 98.11\%): Λίγα FN - δεν χάνει spam
-    \item \textbf{Υψηλή Precision} (k-NN 96.98\%): Λίγα FP - δεν μπλοκάρει legitimate
-    \item \textbf{Ισορροπία} (SVM 95.87\%/94.96\%): Καλύτερη επιλογή για production
+    \item \textbf{Υψηλή Precision} (k-NN 100.00\%): Λίγα FP - δεν μπλοκάρει legitimate emails
+    \item \textbf{Υψηλό Recall} (Naive Bayes 96.09\%): Λίγα FN - δεν χάνει spam
+    \item \textbf{Βέλτιστη Ισορροπία} (SVM 97.62\%/96.09\%): Καλύτερη συνολική απόδοση για production
 \end{itemize}
 
 \textbf{Συμπέρασμα:} Η επιλογή μοντέλου εξαρτάται από το \textbf{cost} των λαθών:
@@ -3876,25 +3876,41 @@ plt.show()
 Η εργασία έδειξε ότι για το πρόβλημα του spam classification:
 
 \begin{center}
-\textbf{\Large Απλότητα > Πολυπλοκότητα}
+    \textbf{\Large Σημασιολογική Κατανόηση + Μη-γραμμικά Μοντέλα = Βέλτιστη Απόδοση}
 \end{center}
 
-Το \textbf{Naive Bayes με Bag-of-Words} υπερτερεί λόγω:
+Το \textbf{SVM με Polynomial Kernel και Sentence Embeddings} επιτυγχάνει την καλύτερη απόδοση:
 \begin{itemize}
-    \item \checkmark Υψηλότερη απόδοση (F1=96.22\%)
-    \item \checkmark Εξαιρετική ταχύτητα (<1s training)
-    \item \checkmark Ερμηνευσιμότητα και transparency
-    \item \checkmark Απλότητα στην υλοποίηση και συντήρηση
+    \item \checkmark \textbf{Υψηλότερο F1-Score} (96.85\%) - καλύτερη ισορροπία P/R
+    \item \checkmark \textbf{Υψηλότερο AUC} (99.93\%) - άριστη ικανότητα διαχωρισμού
+    \item \checkmark \textbf{Balanced Performance} - Precision 97.62\%, Recall 96.09\%
+    \item \checkmark \textbf{Ελάχιστα λάθη} - μόνο 8 λάθος προβλέψεις στο test set (574 emails)
 \end{itemize}
 
-Ωστόσο, τα \textbf{modern embeddings και SVM} παραμένουν πολύτιμα για:
+Το \textbf{Naive Bayes με Bag-of-Words} παραμένει εξαιρετική \textit{baseline} επιλογή:
 \begin{itemize}
-    \item Πιο σύνθετα NLP tasks (sentiment, QA)
-    \item Cross-domain generalization
-    \item Semantic understanding
+    \item \checkmark Πολύ κοντά στην κορυφή (F1=96.09\%, -0.76\% από το SVM)
+    \item \checkmark Εξαιρετική ταχύτητα (<1s training, instant inference)
+    \item \checkmark Υψηλή ερμηνευσιμότητα και transparency
+    \item \checkmark Ιδανικό για resource-constrained περιβάλλοντα
 \end{itemize}
 
-\textbf{Πρακτική Σύσταση:} Ξεκινήστε με απλά μοντέλα (Naive Bayes, LogReg). Χρησιμοποιήστε πολύπλοκα (SVM, Deep Learning) μόνο αν υπάρχει \textit{documented} όφελος που δικαιολογεί το κόστος.
+\textbf{Κύριο Εύρημα:} Τα \textbf{modern sentence embeddings} με το κατάλληλο kernel (polynomial degree=3) παρέχουν ανώτερη απόδοση λόγω της σημασιολογικής κατανόησης και της ικανότητας μοντελοποίησης πολύπλοκων μη-γραμμικών σχέσεων.
+
+\textbf{Πρακτική Σύσταση:}
+\begin{itemize}
+    \item \textbf{Production Systems}: Χρησιμοποιήστε SVM Polynomial + Embeddings για maximum accuracy
+    \item \textbf{Real-time/High-volume}: Επιλέξτε Naive Bayes για ταχύτητα με ελάχιστη απώλεια απόδοσης
+    \item \textbf{Mobile/Edge Devices}: Logistic Regression + PCA(10) για minimal footprint
+    \item \textbf{Hybrid Approach}: Multi-stage pipeline (Naive Bayes → SVM) για βέλτιστο trade-off
+\end{itemize}
+
+\textbf{Trade-off Ανάλυση:} Η επιλογή μοντέλου εξαρτάται από τις προτεραιότητες:
+\begin{itemize}
+    \item \textit{Accuracy-first}: SVM Polynomial (F1=96.85\%)
+    \item \textit{Speed-first}: Naive Bayes (F1=96.09\%, <1s)
+    \item \textit{Balance}: Logistic Regression + Embeddings (F1=95.28\%, γρήγορο)
+\end{itemize}
 
 % \begin{center}
 % \textit{``Perfection is achieved not when there is nothing more to add,}
@@ -3920,14 +3936,14 @@ plt.show()
     \small
     \begin{tabular}{lllccccc}
         \hline
-        \textbf{Μοντέλο} & \textbf{Αναπαράσταση} & \textbf{Παράμετροι} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{AUC} & \textbf{Rank} \\\\
+        \textbf{Μοντέλο} & \textbf{Αναπαράσταση} & \textbf{Παράμετροι}   & \textbf{P}      & \textbf{R} & \textbf{F1}     & \textbf{AUC}    & \textbf{Rank} \\\\
         \hline
-        Naive Bayes & BoW (5000) & Default & 0.9439 & \textbf{0.9811} & \textbf{0.9622} & 0.9959 & 1 \\\\
-        SVM & Embeddings (384) & Poly, degree=3 & \textbf{0.9587} & 0.9496 & 0.9541 & \textbf{0.9978} & 2 \\\\
-        Logistic Reg & Embeddings (384) & C=1.0, max\_iter=1000 & 0.9391 & 0.9465 & 0.9427 & 0.9949 & 3 \\\\
-        k-NN & BoW (5000) & k=1, metric=cosine & 0.9698 & 0.8583 & 0.9106 & 0.9251 & 4 \\\\
-        SVM + PCA & Embeddings+PCA & 90\% var (112 comp) & \textbf{0.9887} & 0.8236 & 0.8986 & 0.9969 & 5 \\\\
-        LogReg + PCA & Embeddings+PCA & 10 components & 0.8891 & 0.8961 & 0.8925 & 0.9887 & 6 \\\\
+        SVM              & Embeddings (384)      & Poly, degree=3        & 0.9762          & 0.9609     & \textbf{0.9685} & \textbf{0.9993} & 1             \\\\
+        Naive Bayes      & BoW (5000)            & Default               & 0.9609          & 0.9609     & 0.9609          & 0.9962          & 2             \\\\
+        Logistic Reg     & Embeddings (384)      & C=1.0, max\_iter=1000 & 0.9603          & 0.9453     & 0.9528          & 0.9949          & 3             \\\\
+        SVM + PCA        & Embeddings+PCA        & 90\% var (115 comp)   & \textbf{0.9915} & 0.9062     & 0.9469          & 0.9984          & 4             \\\\
+        k-NN             & Embeddings (384)      & k=1, metric=cosine    & \textbf{1.0000} & 0.8984     & 0.9465          & 0.9492          & 5             \\\\
+        LogReg + PCA     & Embeddings+PCA        & 10 components         & 0.9040          & 0.8828     & 0.8933          & 0.9889          & 6             \\\\
         \hline
     \end{tabular}
     \caption{Πλήρης πίνακας αποτελεσμάτων για όλα τα μοντέλα}
@@ -3940,13 +3956,13 @@ plt.show()
     \centering
     \begin{tabular}{lccc}
         \hline
-        \textbf{Μοντέλο} & \textbf{Training Time} & \textbf{Inference Time} & \textbf{Memory} \\\\
+        \textbf{Μοντέλο}    & \textbf{Training Time} & \textbf{Inference Time} & \textbf{Memory} \\\\
         \hline
-        Naive Bayes & <1 second & <0.01s per email & 5 MB \\\\
-        Logistic Regression & 3-5 seconds & <0.01s per email & 8 MB \\\\
-        SVM (Polynomial) & 15-30 seconds & 0.1s per email & 50 MB \\\\
-        k-NN & Instant & 2-5s per email & 200 MB \\\\
-        BERT Embeddings & 5-10 minutes (GPU) & 0.5s per email & 500 MB \\\\
+        Naive Bayes         & <1 second              & <0.01s per email        & 5 MB            \\\\
+        Logistic Regression & 3-5 seconds            & <0.01s per email        & 8 MB            \\\\
+        SVM (Polynomial)    & 15-30 seconds          & 0.1s per email          & 50 MB           \\\\
+        k-NN                & Instant                & 2-5s per email          & 200 MB          \\\\
+        BERT Embeddings     & 5-10 minutes (GPU)     & 0.5s per email          & 500 MB          \\\\
         \hline
     \end{tabular}
     \caption{Υπολογιστικές απαιτήσεις κάθε μοντέλου}
@@ -3959,14 +3975,14 @@ plt.show()
     \small
     \begin{tabular}{lcccc}
         \hline
-        \textbf{Μοντέλο} & \textbf{TN} & \textbf{FP} & \textbf{FN} & \textbf{TP} \\\\
+        \textbf{Μοντέλο}    & \textbf{TN}   & \textbf{FP} & \textbf{FN}  & \textbf{TP}  \\\\
         \hline
-        Naive Bayes & 2056 (98.2\%) & 37 (1.8\%) & 12 (1.9\%) & 623 (98.1\%) \\\\
-        Logistic Regression & 2063 (98.6\%) & 30 (1.4\%) & 34 (5.4\%) & 601 (94.6\%) \\\\
-        k-NN (k=1) & 2077 (99.2\%) & 16 (0.8\%) & 90 (14.2\%) & 545 (85.8\%) \\\\
-        SVM (Polynomial) & 2074 (99.1\%) & 19 (0.9\%) & 32 (5.0\%) & 603 (95.0\%) \\\\
-        SVM + PCA(90\%) & 2086 (99.7\%) & 7 (0.3\%) & 112 (17.6\%) & 523 (82.4\%) \\\\
-        LogReg + PCA(10) & 2054 (98.1\%) & 39 (1.9\%) & 66 (10.4\%) & 569 (89.6\%) \\\\
+        Naive Bayes         & 2056 (98.2\%) & 37 (1.8\%)  & 12 (1.9\%)   & 623 (98.1\%) \\\\
+        Logistic Regression & 2063 (98.6\%) & 30 (1.4\%)  & 34 (5.4\%)   & 601 (94.6\%) \\\\
+        k-NN (k=1)          & 2077 (99.2\%) & 16 (0.8\%)  & 90 (14.2\%)  & 545 (85.8\%) \\\\
+        SVM (Polynomial)    & 2074 (99.1\%) & 19 (0.9\%)  & 32 (5.0\%)   & 603 (95.0\%) \\\\
+        SVM + PCA(90\%)     & 2086 (99.7\%) & 7 (0.3\%)   & 112 (17.6\%) & 523 (82.4\%) \\\\
+        LogReg + PCA(10)    & 2054 (98.1\%) & 39 (1.9\%)  & 66 (10.4\%)  & 569 (89.6\%) \\\\
         \hline
     \end{tabular}
     \caption{Confusion matrices για όλα τα μοντέλα στο test set}
@@ -4292,12 +4308,12 @@ tqdm>=4.62.0
     \centering
     \begin{tabular}{ll}
         \hline
-        \textbf{Στοιχείο} & \textbf{Ελάχιστη Απαίτηση} \\\\
+        \textbf{Στοιχείο}   & \textbf{Ελάχιστη Απαίτηση}               \\\\
         \hline
-        RAM & 4 GB (8 GB συνιστάται) \\\\
-        Αποθηκευτικός Χώρος & 2 GB ελεύθερος χώρος \\\\
-        CPU & Οποιοσδήποτε σύγχρονος processor \\\\
-        GPU & Προαιρετικό (επιταχύνει BERT embeddings) \\\\
+        RAM                 & 4 GB (8 GB συνιστάται)                   \\\\
+        Αποθηκευτικός Χώρος & 2 GB ελεύθερος χώρος                     \\\\
+        CPU                 & Οποιοσδήποτε σύγχρονος processor         \\\\
+        GPU                 & Προαιρετικό (επιταχύνει BERT embeddings) \\\\
         \hline
     \end{tabular}
 \end{table}
@@ -4362,19 +4378,19 @@ jupyter lab
     \small
     \begin{tabular}{p{5cm}p{7cm}}
         \hline
-        \textbf{Πρόβλημα} & \textbf{Λύση} \\\\
+        \textbf{Πρόβλημα}            & \textbf{Λύση}                                                       \\\\
         \hline
-        \texttt{ModuleNotFoundError} & Εγκαταστήστε το package: \texttt{pip install <package>} \\\\
+        \texttt{ModuleNotFoundError} & Εγκαταστήστε το package: \texttt{pip install <package>}             \\\\
         \hline
-        NLTK data not found & Εκτελέστε: \texttt{nltk.download('stopwords')} \\\\
+        NLTK data not found          & Εκτελέστε: \texttt{nltk.download('stopwords')}                      \\\\
         \hline
-        Out of memory error & Μειώστε το \texttt{max\_features} ή χρησιμοποιήστε batch processing \\\\
+        Out of memory error          & Μειώστε το \texttt{max\_features} ή χρησιμοποιήστε batch processing \\\\
         \hline
-        Slow BERT encoding & Χρησιμοποιήστε GPU ή μειώστε το batch size \\\\
+        Slow BERT encoding           & Χρησιμοποιήστε GPU ή μειώστε το batch size                          \\\\
         \hline
-        Kernel keeps dying & Restart kernel: Kernel → Restart \\\\
+        Kernel keeps dying           & Restart kernel: Kernel → Restart                                    \\\\
         \hline
-        Results differ & Ελέγξτε το \texttt{random\_state=42} σε όλα τα splits \\\\
+        Results differ               & Ελέγξτε το \texttt{random\_state=42} σε όλα τα splits               \\\\
         \hline
     \end{tabular}
 \end{table}
