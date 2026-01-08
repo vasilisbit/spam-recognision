@@ -616,11 +616,11 @@
 
 \section{Επεξεργασία Κειμένου}
 
-Η επεξεργασία κειμένου (text processing) αποτελεί το θεμέλιο της ανάλυσης φυσικής γλώσσας και της κατηγοριοποίησης κειμένων. Περιλαμβάνει τη μετατροπή του ακατέργαστου κειμένου σε μια μορφή κατάλληλη για αλγορίθμους μηχανικής μάθησης~\citeauthyear{manning1999foundations}.
+Η επεξεργασία κειμένου (text processing) αποτελεί το θεμέλιο της ανάλυσης φυσικής γλώσσας και της κατηγοριοποίησης κειμένων. Περιλαμβάνει τη μετατροπή του ακατέργαστου κειμένου σε μια μορφή κατάλληλη για αλγορίθμους μηχανικής μάθησης.
 
 \subsection{Προεπεξεργασία Κειμένου}
 
-Η προεπεξεργασία κειμένου είναι το πρώτο και κρίσιμο βήμα στην ανάλυση κειμένου. Στόχος της είναι η αφαίρεση του θορύβου και η κανονικοποίηση του κειμένου για να βελτιώσει την απόδοση των μοντέλων~\citeauthyear{jurafsky2000speech}.
+Η προεπεξεργασία κειμένου είναι το πρώτο και κρίσιμο βήμα στην ανάλυση κειμένου. Στόχος της είναι η αφαίρεση του θορύβου και η κανονικοποίηση του κειμένου για να βελτιώσει την απόδοση των μοντέλων.
 
 \subsubsection{Βασικές Τεχνικές}
 
@@ -647,14 +647,14 @@
 
 \subsection{Stopwords}
 
-Τα stopwords είναι συχνά εμφανιζόμενες λέξεις που έχουν μικρή σημασιολογική αξία για την κατηγοριοποίηση. Στην αγγλική γλώσσα περιλαμβάνουν λέξεις όπως "the", "is", "a", "an", "in", "on" κ.λπ.~\citeauthyear{sparckjones1972statistical}.
+Τα stopwords είναι συχνά εμφανιζόμενες λέξεις που έχουν μικρή σημασιολογική αξία για την κατηγοριοποίηση. Στην αγγλική γλώσσα περιλαμβάνουν λέξεις όπως "the", "is", "a", "an", "in", "on" κ.λπ.
 
 Η αφαίρεση stopwords βασίζεται σε μια προκαθορισμένη λίστα λέξεων \(S = \{s_1, s_2, \ldots, s_k\}\). Για ένα έγγραφο με tokens \(T = \{t_1, t_2, \ldots, t_m\}\), το φιλτραρισμένο σύνολο δίνεται από:
 \begin{equation}
     T' = T \setminus S = \{t \in T \mid t \notin S\}
 \end{equation}
 
-Στην παρούσα εργασία χρησιμοποιείται η λίστα stopwords της βιβλιοθήκης NLTK, η οποία περιέχει 179 αγγλικές λέξεις~\citeauthyear{bird2009natural}. Η αφαίρεση stopwords έχει δύο κύρια πλεονεκτήματα:
+Στην παρούσα εργασία χρησιμοποιείται η λίστα stopwords της βιβλιοθήκης NLTK, η οποία περιέχει 179 αγγλικές λέξεις. Η αφαίρεση stopwords έχει δύο κύρια πλεονεκτήματα:
 \begin{itemize}
     \item \textbf{Μείωση διαστατικότητας}: Μειώνει το μέγεθος του λεξιλογίου κατά 20-30\%, επιταχύνοντας την εκπαίδευση.
     \item \textbf{Βελτίωση ακρίβειας}: Αφαιρεί λέξεις που δεν συνεισφέρουν στη διάκριση spam/ham, εστιάζοντας σε περισσότερο πληροφοριακές λέξεις.
@@ -662,7 +662,7 @@
 
 \subsection{Stemming και Lemmatization}
 
-Το stemming και το lemmatization είναι τεχνικές κανονικοποίησης που μειώνουν τις λέξεις στη βασική τους μορφή~\citeauthyear{porter1980algorithm}.
+Το stemming και το lemmatization είναι τεχνικές κανονικοποίησης που μειώνουν τις λέξεις στη βασική τους μορφή.
 
 \subsubsection{Stemming}
 
@@ -687,11 +687,11 @@
 
 \section{Αναπαράσταση Κειμένου}
 
-Η αναπαράσταση κειμένου (text representation) μετατρέπει το κείμενο σε αριθμητική μορφή που μπορούν να επεξεργαστούν οι αλγορίθμοι μηχανικής μάθησης. Οι κύριες προσεγγίσεις διακρίνονται σε παραδοσιακές (sparse representations) και σύγχρονες (dense representations)~\citeauthyear{manning2008introduction}.
+Η αναπαράσταση κειμένου (text representation) μετατρέπει το κείμενο σε αριθμητική μορφή που μπορούν να επεξεργαστούν οι αλγορίθμοι μηχανικής μάθησης. Οι κύριες προσεγγίσεις διακρίνονται σε παραδοσιακές (sparse representations) και σύγχρονες (dense representations).
 
 \subsection{Bag of Words (BoW)}
 
-Το μοντέλο Bag of Words (BoW) αναπαριστά κάθε έγγραφο ως ένα διάνυσμα συχνοτήτων λέξεων, αγνοώντας τη σειρά και τη γραμματική δομή~\citeauthyear{harris1954distributional}.
+Το μοντέλο Bag of Words (BoW) αναπαριστά κάθε έγγραφο ως ένα διάνυσμα συχνοτήτων λέξεων, αγνοώντας τη σειρά και τη γραμματική δομή.
 
 \subsubsection{Μαθηματικό Μοντέλο}
 
@@ -732,7 +732,7 @@
 
 \subsection{Word Embeddings}
 
-Τα word embeddings αναπαριστούν λέξεις ως πυκνά διανύσματα πραγματικών αριθμών σε χαμηλής διάστασης χώρο, όπου σημασιολογικά παρόμοιες λέξεις έχουν παρόμοια διανύσματα~\citeauthyear{mikolov2013efficient, pennington2014glove}.
+Τα word embeddings αναπαριστούν λέξεις ως πυκνά διανύσματα πραγματικών αριθμών σε χαμηλής διάστασης χώρο, όπου σημασιολογικά παρόμοιες λέξεις έχουν παρόμοια διανύσματα.
 
 \subsubsection{Word2Vec}
 
@@ -744,7 +744,7 @@
 
 \subsubsection{GloVe}
 
-Το GloVe (Global Vectors) μαθαίνει embeddings εκμεταλλευόμενο τη μήτρα συν-εμφάνισης λέξεων σε όλο το corpus~\citeauthyear{pennington2014glove}.
+Το GloVe (Global Vectors) μαθαίνει embeddings εκμεταλλευόμενο τη μήτρα συν-εμφάνισης λέξεων σε όλο το corpus.
 
 \subsubsection{Περιορισμοί}
 
@@ -757,7 +757,7 @@
 
 \subsection{Sentence Transformers}
 
-Οι Sentence Transformers χρησιμοποιούν μετασχηματιστές (transformers) για να δημιουργήσουν σταθερής διάστασης embeddings για ολόκληρες προτάσεις/εγγράφα~\citeauthyear{reimers2019sentence}.
+Οι Sentence Transformers χρησιμοποιούν μετασχηματιστές (transformers) για να δημιουργήσουν σταθερής διάστασης embeddings για ολόκληρες προτάσεις/εγγράφα.
 
 \subsubsection{Μαθηματική Αναπαράσταση}
 
@@ -782,7 +782,7 @@
 
 \subsubsection{Αρχιτεκτονική - Μοντέλο all-MiniLM-L6-v2}
 
-Στην παρούσα εργασία χρησιμοποιείται το μοντέλο \textit{all-MiniLM-L6-v2}~\citeauthyear{reimers2019sentence}, το οποίο βασίζεται στον μετασχηματιστή BERT:
+Στην παρούσα εργασία χρησιμοποιείται το μοντέλο \textit{all-MiniLM-L6-v2}, το οποίο βασίζεται στον μετασχηματιστή BERT:
 
 \begin{enumerate}
     \item \textbf{Tokenization}: Η πρότ αση διαιρείται σε subword tokens:
@@ -830,7 +830,7 @@
 
 \subsubsection{Μαθηματικό Υπόδειγμα}
 
-Ο αλγόριθμος Naive Bayes βασίζεται στο \textbf{θεώρημα του Bayes}~\citeauthyear{russell2010artificial}:
+Ο αλγόριθμος Naive Bayes βασίζεται στο \textbf{θεώρημα του Bayes}:
 
 \begin{equation}
     P(c|x) = \frac{P(x|c) \cdot P(c)}{P(x)}
@@ -846,7 +846,7 @@
 
 \subsubsection*{Multinomial Naive Bayes}
 
-Για ταξινόμηση κειμένου, χρησιμοποιούμε το \textbf{Multinomial Naive Bayes}~\citeauthyear{mccallum1998comparison}, όπου το κείμενο αναπαρίσταται ως διάνυσμα συχνοτήτων λέξεων \(x = (n_1, n_2, ..., n_{|V|})\) με \(n_i\) τον αριθμό εμφανίσεων της λέξης \(w_i\). Η πιθανότητα likelihood υπολογίζεται ως:
+Για ταξινόμηση κειμένου, χρησιμοποιούμε το \textbf{Multinomial Naive Bayes}, όπου το κείμενο αναπαρίσταται ως διάνυσμα συχνοτήτων λέξεων \(x = (n_1, n_2, ..., n_{|V|})\) με \(n_i\) τον αριθμό εμφανίσεων της λέξης \(w_i\). Η πιθανότητα likelihood υπολογίζεται ως:
 \begin{equation}
     P(x|c) = P(n_1, n_2, ..., n_{|V|}|c) = \frac{n!}{n_1! n_2! \cdots n_{|V|}!} \prod_{i=1}^{|V|} p_i^{n_i}
 \end{equation}
@@ -859,7 +859,7 @@
 
 \subsubsection*{Laplace Smoothing}
 
-Για να αποφύγουμε το πρόβλημα μηδενικών πιθανοτήτων όταν μια λέξη δεν εμφανίζεται στο training set, εφαρμόζουμε \textbf{Laplace (additive) smoothing}~\citeauthyear{manning2008introduction}:
+Για να αποφύγουμε το πρόβλημα μηδενικών πιθανοτήτων όταν μια λέξη δεν εμφανίζεται στο training set, εφαρμόζουμε \textbf{Laplace (additive) smoothing}:
 
 \begin{equation}
     P(w_i|c) = \frac{count(w_i, c) + \alpha}{\sum_{j=1}^{|V|} count(w_j, c) + \alpha |V|}
@@ -869,19 +869,19 @@
 
 \subsubsection{Παραδοχές και Περιορισμοί}
 
-Η θεμελιώδης παραδοχή του Naive Bayes είναι η \textbf{δεσμευμένη ανεξαρτησία} (conditional independence)~\citeauthyear{russell2010artificial}: δεδομένης της κλάσης \(c\), τα χαρακτηριστικά \(x_1, ..., x_n\) είναι ανεξάρτητα:
+Η θεμελιώδης παραδοχή του Naive Bayes είναι η \textbf{δεσμευμένη ανεξαρτησία} (conditional independence): δεδομένης της κλάσης \(c\), τα χαρακτηριστικά \(x_1, ..., x_n\) είναι ανεξάρτητα:
 \begin{equation}
     P(x_1, ..., x_n|c) = \prod_{i=1}^{n} P(x_i|c)
 \end{equation}
 
-Αυτή η παραδοχή είναι "naive" (αφελής) καθώς στην πράξη οι λέξεις σε ένα κείμενο \textit{δεν} είναι ανεξάρτητες (π.χ., η λέξη "York" συχνά εμφανίζεται μετά τη "New"). Παρόλα αυτά, ο αλγόριθμος αποδίδει καλά στην πράξη~\citeauthyear{rish2001empirical} για τους εξής λόγους:
+Αυτή η παραδοχή είναι "naive" (αφελής) καθώς στην πράξη οι λέξεις σε ένα κείμενο \textit{δεν} είναι ανεξάρτητες (π.χ., η λέξη "York" συχνά εμφανίζεται μετά τη "New"). Παρόλα αυτά, ο αλγόριθμος αποδίδει καλά στην πράξη για τους εξής λόγους:
 
 \begin{enumerate}
     \item \textbf{Computational Efficiency}: Η εκπαίδευση έχει πολυπλοκότητα \(O(n \cdot d)\) όπου \(n\) το πλήθος δειγμάτων και \(d\) τα χαρακτηριστικά, χωρίς να απαιτείται επαναληπτική βελτιστοποίηση.
 
     \item \textbf{Low Variance}: Εκτιμά λιγότερες παραμέτρους (\(O(d)\)) σε σχέση με άλλους classifiers, μειώνοντας το overfitting σε μικρά datasets.
 
-    \item \textbf{Asymptotic Optimality}: Σε πολλές περιπτώσεις, η violation της independence assumption δεν επηρεάζει σημαντικά την ακρίβεια ταξινόμησης~\citeauthyear{domingos1997optimality}.
+    \item \textbf{Asymptotic Optimality}: Σε πολλές περιπτώσεις, η violation της independence assumption δεν επηρεάζει σημαντικά την ακρίβεια ταξινόμησης.
 \end{enumerate}
 
 Ωστόσο, οι περιορισμοί περιλαμβάνουν την αδυναμία να μοντελοποιήσει συσχετίσεις μεταξύ χαρακτηριστικών και την υποτίμηση ή υπερεκτίμηση των πιθανοτήτων (calibration issues).
@@ -890,7 +890,7 @@
 
 \subsubsection{Μαθηματικό Υπόδειγμα}
 
-Ο αλγόριθμος k-Nearest Neighbors~\citeauthyear{fix1989discriminatory,cover1967nearest} είναι ένας non-parametric, instance-based μέθοδος μάθησης. Για ένα νέο δείγμα $x$, ο k-NN:
+Ο αλγόριθμος k-Nearest Neighbors είναι ένας non-parametric, instance-based μέθοδος μάθησης. Για ένα νέο δείγμα $x$, ο k-NN:
 
 \begin{enumerate}
     \item Υπολογίζει την απόσταση \(d(x, x_i)\) από όλα τα training δείγματα \(x_i\).
@@ -906,7 +906,7 @@
 
 \subsubsection*{Μετρικές Απόστασης}
 
-Η πιο συνηθισμένη μετρική για sentence embeddings είναι η \textbf{Ευκλείδεια απόσταση}~\citeauthyear{duda2001pattern}:
+Η πιο συνηθισμένη μετρική για sentence embeddings είναι η \textbf{Ευκλείδεια απόσταση}:
 
 \begin{equation}
     d_{Euclidean}(x, x') = \sqrt{\sum_{j=1}^{d} (x_j - x'_j)^2} = \|x - x'\|_2
@@ -922,7 +922,7 @@
 
 \subsubsection*{Weighted k-NN}
 
-Για να δώσουμε μεγαλύτερη βαρύτητα στους πλησιέστερους γείτονες, χρησιμοποιούμε \textbf{distance-weighted voting}~\citeauthyear{dudani1976distance}:
+Για να δώσουμε μεγαλύτερη βαρύτητα στους πλησιέστερους γείτονες, χρησιμοποιούμε \textbf{distance-weighted voting}:
 
 \begin{equation}
     \hat{y} = \arg\max_{c} \sum_{x_i \in \mathcal{N}_k(x)} w_i \cdot \mathbb{1}(y_i = c), \quad w_i = \frac{1}{d(x, x_i) + \epsilon}
@@ -932,7 +932,7 @@
 
 \subsubsection{Επιλογή k}
 
-Η παράμετρος \(k\) ελέγχει την πολυπλοκότητα του μοντέλου~\citeauthyear{hastie2009elements}:
+Η παράμετρος \(k\) ελέγχει την πολυπλοκότητα του μοντέλου:
 \begin{enumerate}
     \item \textbf{Μικρό k}: Χαμηλό bias, υψηλό variance \(\rightarrow\) overfitting. Στην ακραία περίπτωση \(k=1\), το μοντέλο απομνημονεύει τα training data.
 
@@ -943,7 +943,7 @@
 
 \subsubsection*{Curse of Dimensionality}
 
-Ο k-NN υποφέρει από το \textbf{curse of dimensionality}~\citeauthyear{bellman1961adaptive,beyer1999nearest}: σε υψηλές διαστάσεις (\(d \gg 100\)), όλα τα σημεία τείνουν να έχουν παρόμοιες αποστάσεις, κάνοντας την "εγγύτητα" ασαφή. Για BoW με \(d=5000\), αυτό είναι πρόβλημα. Για Sentence Transformers με \(d=384\), είναι πιο διαχειρίσιμο, ενώ το PCA μειώνει περαιτέρω τη διαστατικότητα.
+Ο k-NN υποφέρει από το \textbf{curse of dimensionality}: σε υψηλές διαστάσεις (\(d \gg 100\)), όλα τα σημεία τείνουν να έχουν παρόμοιες αποστάσεις, κάνοντας την "εγγύτητα" ασαφή. Για BoW με \(d=5000\), αυτό είναι πρόβλημα. Για Sentence Transformers με \(d=384\), είναι πιο διαχειρίσιμο, ενώ το PCA μειώνει περαιτέρω τη διαστατικότητα.
 
 \subsubsection*{Υπολογιστική Πολυπλοκότητα}
 
@@ -952,7 +952,7 @@
 
 \subsubsection{Μαθηματικό Υπόδειγμα}
 
-Τα Support Vector Machines~\citeauthyear{cortes1995support,vapnik1995nature} είναι ισχυροί αλγόριθμοι για δυαδική ταξινόμηση που βρίσκουν το βέλτιστο διαχωριστικό \textbf{hyperplane} μεταξύ των κλάσεων. Για γραμμικά διαχωρίσιμα δεδομένα, το hyperplane ορίζεται ως:
+Τα Support Vector Machines είναι ισχυροί αλγόριθμοι για δυαδική ταξινόμηση που βρίσκουν το βέλτιστο διαχωριστικό \textbf{hyperplane} μεταξύ των κλάσεων. Για γραμμικά διαχωρίσιμα δεδομένα, το hyperplane ορίζεται ως:
 
 \begin{equation}
     w^T x + b = 0
@@ -966,7 +966,7 @@
 
 \subsubsection*{Maximum Margin Classification}
 
-Το κλειδί του SVM είναι η μεγιστοποίηση του \textbf{margin} \(\gamma = \frac{2}{\|w\|}\), δηλαδή της ελάχιστης απόστασης των training δειγμάτων από το hyperplane. Αυτό οδηγεί στο βελτιστοποιητικό πρόβλημα~\citeauthyear{scholkopf2002learning}:
+Το κλειδί του SVM είναι η μεγιστοποίηση του \textbf{margin} \(\gamma = \frac{2}{\|w\|}\), δηλαδή της ελάχιστης απόστασης των training δειγμάτων από το hyperplane. Αυτό οδηγεί στο βελτιστοποιητικό πρόβλημα:
 
 \begin{equation}
     \begin{aligned}
@@ -979,7 +979,7 @@
 
 \subsubsection*{Soft-Margin SVM}
 
-Για μη γραμμικά διαχωρίσιμα δεδομένα, χαλαρώνουμε τους περιορισμούς εισάγοντας \textbf{slack variables} \(\xi_i \geq 0\)~\citeauthyear{cortes1995support}:
+Για μη γραμμικά διαχωρίσιμα δεδομένα, χαλαρώνουμε τους περιορισμούς εισάγοντας \textbf{slack variables} \(\xi_i \geq 0\):
 \begin{equation}
     \begin{aligned}
         \min_{w, b, \xi} \quad & \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} \xi_i                         \\
@@ -996,7 +996,7 @@
 
 \subsubsection{Kernel Functions}
 
-Για μη γραμμικά προβλήματα, το \textbf{kernel trick}~\citeauthyear{aizerman1964theoretical,boser1992training} μετασχηματίζει τα δεδομένα σε υψηλότερο διαστασιακό χώρο \(\phi: \mathbb{R}^d \rightarrow \mathbb{R}^m\) χωρίς να υπολογίσει ρητά το \(\phi(x)\). Ο dual formulation του SVM χρησιμοποιεί μόνο εσωτερικά γινόμενα \(\langle \phi(x_i), \phi(x_j) \rangle\), τα οποία αντικαθίστανται από τη \textbf{kernel function}:
+Για μη γραμμικά προβλήματα, το \textbf{kernel trick} μετασχηματίζει τα δεδομένα σε υψηλότερο διαστασιακό χώρο \(\phi: \mathbb{R}^d \rightarrow \mathbb{R}^m\) χωρίς να υπολογίσει ρητά το \(\phi(x)\). Ο dual formulation του SVM χρησιμοποιεί μόνο εσωτερικά γινόμενα \(\langle \phi(x_i), \phi(x_j) \rangle\), τα οποία αντικαθίστανται από τη \textbf{kernel function}:
 
 \begin{equation}
     K(x_i, x_j) = \langle \phi(x_i), \phi(x_j) \rangle
@@ -1017,7 +1017,7 @@
           \end{equation}
           Μοντελοποιεί πολυωνυμικές σχέσεις βαθμού \(d\). Σπάνια χρησιμοποιείται λόγω αριθμητικών προβλημάτων.
 
-    \item \textbf{Radial Basis Function (RBF) / Gaussian Kernel}~\citeauthyear{scholkopf2002learning}:
+    \item \textbf{Radial Basis Function (RBF) / Gaussian Kernel}:
           \begin{equation}
               K(x, x') = \exp\left(-\gamma \|x - x'\|^2\right), \quad \gamma = \frac{1}{2\sigma^2}
           \end{equation}
@@ -1033,7 +1033,7 @@
 
 \subsubsection{Μαθηματικό Υπόδειγμα}
 
-Η Logistic Regression~\citeauthyear{hosmer2013applied,bishop2006pattern} είναι ένα γραμμικό μοντέλο για δυαδική ταξινόμηση που μοντελοποιεί την πιθανότητα \(P(y=1|x)\) χρησιμοποιώντας τη \textbf{sigmoid (logistic) function}:
+Η Logistic Regression είναι ένα γραμμικό μοντέλο για δυαδική ταξινόμηση που μοντελοποιεί την πιθανότητα \(P(y=1|x)\) χρησιμοποιώντας τη \textbf{sigmoid (logistic) function}:
 
 \begin{equation}
     \sigma(z) = \frac{1}{1 + e^{-z}} = \frac{e^z}{1 + e^z}
@@ -1062,7 +1062,7 @@
     \log \frac{P(y=1|x)}{P(y=0|x)} = w^T x + b
 \end{equation}
 
-Τα βάρη \(w\) εκπαιδεύονται μεγιστοποιώντας τη \textbf{log-likelihood}~\citeauthyear{agresti2002categorical}:
+Τα βάρη \(w\) εκπαιδεύονται μεγιστοποιώντας τη \textbf{log-likelihood}:
 
 \begin{equation}
     \mathcal{L}(w, b) = \sum_{i=1}^{n} \left[ y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right]
@@ -1074,11 +1074,11 @@
     J(w, b) = -\frac{1}{n} \sum_{i=1}^{n} \left[ y_i \log(\hat{p}_i) + (1-y_i) \log(1-\hat{p}_i) \right]
 \end{equation}
 
-Η βελτιστοποίηση γίνεται με gradient descent ή Newton-Raphson methods~\citeauthyear{bishop2006pattern}.
+Η βελτιστοποίηση γίνεται με gradient descent ή Newton-Raphson methods.
 
 \subsubsection{Regularization}
 
-Για αποφυγή overfitting, προστίθεται \textbf{regularization penalty}~\citeauthyear{hastie2009elements}:
+Για αποφυγή overfitting, προστίθεται \textbf{regularization penalty}:
 
 \begin{equation}
     J_{reg}(w, b) = J(w, b) + \lambda R(w)
@@ -1124,7 +1124,7 @@
 
 \subsection{Principal Component Analysis (PCA)}
 
-Το Principal Component Analysis~\citeauthyear{pearson1901liii,jolliffe2002principal} είναι μία μέθοδος γραμμικής μείωσης διαστάσεων που μετασχηματίζει τα δεδομένα σε νέο σύστημα συντεταγμένων όπου η μέγιστη διασπορά (variance) βρίσκεται στην πρώτη συνιστώσα (PC1), η δεύτερη μέγιστη στη δεύτερη (PC2), κ.ο.κ.
+Το Principal Component Analysis είναι μία μέθοδος γραμμικής μείωσης διαστάσεων που μετασχηματίζει τα δεδομένα σε νέο σύστημα συντεταγμένων όπου η μέγιστη διασπορά (variance) βρίσκεται στην πρώτη συνιστώσα (PC1), η δεύτερη μέγιστη στη δεύτερη (PC2), κ.ο.κ.
 
 \subsubsection*{Μαθηματική Διατύπωση}
 
@@ -1162,7 +1162,7 @@
 
 \subsubsection*{Singular Value Decomposition (SVD)}
 
-Στην πράξη, το PCA υπολογίζεται με SVD~\citeauthyear{golub2013matrix}:
+Στην πράξη, το PCA υπολογίζεται με SVD:
 
 \begin{equation}
     X = U \Sigma V^T
@@ -1172,7 +1172,7 @@
 
 \subsection{Explained Variance}
 
-Η \textbf{explained variance ratio} για το \(i\)-οστό principal component είναι~\citeauthyear{jolliffe2002principal}:
+Η \textbf{explained variance ratio} για το \(i\)-οστό principal component είναι:
 \begin{equation}
     r_i = \frac{\lambda_i}{\sum_{j=1}^{d} \lambda_j}
 \end{equation}
@@ -1188,7 +1188,7 @@
 \begin{enumerate}
     \item \textbf{Variance Threshold}: Κρατάμε components μέχρι να φτάσουμε \(R_k \geq \theta\) (συνήθως \(\theta = 0.90\) ή \(0.95\)), δηλαδή διατηρούμε 90-95\% της variance.
 
-    \item \textbf{Scree Plot}: Σχεδιάζουμε τα \(\lambda_i\) συναρτήσει του \(i\) και επιλέγουμε το "elbow" point όπου τα eigenvalues αρχίζουν να πέφτουν πιο αργά~\citeauthyear{cattell1966scree}.
+    \item \textbf{Scree Plot}: Σχεδιάζουμε τα \(\lambda_i\) συναρτήσει του \(i\) και επιλέγουμε το "elbow" point όπου τα eigenvalues αρχίζουν να πέφτουν πιο αργά.
 
     \item \textbf{Kaiser Criterion}: Κρατάμε components με \(\lambda_i > 1\) (ή \(\lambda_i > \bar{\lambda}\) όπου \(\bar{\lambda}\) ο μέσος eigenvalue). Αυτό λειτουργεί μόνο αν τα δεδομένα είναι standardized.
 
@@ -1220,7 +1220,7 @@
 
 \subsection{Confusion Matrix}
 
-Το \textbf{Confusion Matrix}~\citeauthyear{fawcett2006introduction} είναι ένας πίνακας \(2 \times 2\) που συνοψίζει τις προβλέψεις ενός δυαδικού classifier:
+Το \textbf{Confusion Matrix} είναι ένας πίνακας \(2 \times 2\) που συνοψίζει τις προβλέψεις ενός δυαδικού classifier:
 
 \begin{table}[h]
     \centering
@@ -1261,7 +1261,7 @@
 
 \subsubsection*{Precision και Recall}
 
-\textbf{Precision} (Positive Predictive Value)~\citeauthyear{powers2011evaluation}:
+\textbf{Precision} (Positive Predictive Value):
 
 \begin{equation}
     \text{Precision} = \frac{TP}{TP + FP}
@@ -1269,7 +1269,7 @@
 
 Απαντά: "Από όσα προβλέψαμε ως spam, πόσα ήταν όντως spam;" Υψηλό precision σημαίνει λίγα false positives.
 
-\textbf{Recall} (Sensitivity, True Positive Rate)~\citeauthyear{powers2011evaluation}:
+\textbf{Recall} (Sensitivity, True Positive Rate):
 
 \begin{equation}
     \text{Recall} = \frac{TP}{TP + FN}
@@ -1281,7 +1281,7 @@
 
 \subsubsection*{F1-Score}
 
-Το \textbf{F1-Score}~\citeauthyear{powers2011evaluation} είναι ο αρμονικός μέσος του precision και recall:
+Το \textbf{F1-Score} είναι ο αρμονικός μέσος του precision και recall:
 
 \begin{equation}
     F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2 TP}{2 TP + FP + FN}
@@ -1299,7 +1299,7 @@
 
 \subsection{ROC Curve και AUC}
 
-Η \textbf{Receiver Operating Characteristic (ROC) curve}~\citeauthyear{fawcett2006introduction} είναι ένα γράφημα που δείχνει την απόδοση ενός binary classifier σε διάφορα classification thresholds. Απεικονίζει:
+Η \textbf{Receiver Operating Characteristic (ROC) curve} είναι ένα γράφημα που δείχνει την απόδοση ενός binary classifier σε διάφορα classification thresholds. Απεικονίζει:
 
 \begin{itemize}
     \item \textbf{X-axis}: False Positive Rate (FPR) = \(\frac{FP}{FP + TN} = 1 - \text{Specificity}\)
@@ -1309,13 +1309,13 @@
 Για κάθε threshold \(t\), υπολογίζουμε \((FPR(t), TPR(t))\) και τα συνδέουμε με γραμμή.
 \subsubsection*{Area Under Curve (AUC)}
 
-Η \textbf{AUC-ROC}~\citeauthyear{bradley1997use} είναι το εμβαδόν κάτω από την ROC καμπύλη:
+Η \textbf{AUC-ROC} είναι το εμβαδόν κάτω από την ROC καμπύλη:
 
 \begin{equation}
     \text{AUC} = \int_0^1 TPR(FPR^{-1}(x)) \, dx
 \end{equation}
 
-Ερμηνεία: Η πιθανότητα ο classifier να δίνει υψηλότερο score σε ένα τυχαίο positive example παρά σε ένα τυχαίο negative example~\citeauthyear{fawcett2006introduction}.
+Ερμηνεία: Η πιθανότητα ο classifier να δίνει υψηλότερο score σε ένα τυχαίο positive example παρά σε ένα τυχαίο negative example.
 
 \begin{itemize}
     \item \(\text{AUC} = 1.0\): Τέλειος classifier (διαχωρίζει πλήρως τις κλάσεις).
@@ -1462,7 +1462,7 @@
 
 \subsection{Stratified Split}
 
-Για να διατηρηθεί η αναλογία των κλάσεων σε όλα τα sets, εφαρμόζεται \textbf{stratified sampling}~\citeauthyear{kohavi1995study}. Αυτό εξασφαλίζει ότι κάθε set έχει παρόμοια κατανομή spam/ham με το αρχικό dataset.
+Για να διατηρηθεί η αναλογία των κλάσεων σε όλα τα sets, εφαρμόζεται \textbf{stratified sampling}. Αυτό εξασφαλίζει ότι κάθε set έχει παρόμοια κατανομή spam/ham με το αρχικό dataset.
 
 \subsubsection*{Στρατηγική Υλοποίησης}
 
@@ -1503,7 +1503,7 @@
 
 \section{Προεπεξεργασία Κειμένου}
 
-Η προεπεξεργασία κειμένου αποτελεί κρίσιμο στάδιο γιατί μετασχηματίζει το ακατέργαστο κείμενο σε καθαρή αναπαράσταση κατάλληλη για μηχανική μάθηση. Ο στόχος είναι να αφαιρεθεί ο θόρυβος (noise) και να διατηρηθούν μόνο τα σημαντικά στοιχεία που διακρίνουν spam από ham~\citeauthyear{manning1999foundations, bird2009natural}.
+Η προεπεξεργασία κειμένου αποτελεί κρίσιμο στάδιο γιατί μετασχηματίζει το ακατέργαστο κείμενο σε καθαρή αναπαράσταση κατάλληλη για μηχανική μάθηση. Ο στόχος είναι να αφαιρεθεί ο θόρυβος (noise) και να διατηρηθούν μόνο τα σημαντικά στοιχεία που διακρίνουν spam από ham.
 
 \subsection{Πέντε-βημάτων-στάδιο Καθαρισμού}
 
@@ -1557,7 +1557,7 @@ text = ' '.join(text.split())  # Normalize multiple spaces
 
 \subsubsection*{5. Stopwords Removal}
 
-Χρησιμοποιήθηκε η λίστα \textbf{NLTK English stopwords}~\citeauthyear{bird2009natural} που περιέχει \textbf{179 κοινές αγγλικές λέξεις} όπως "the", "is", "at", "which", "on", κτλ:
+Χρησιμοποιήθηκε η λίστα \textbf{NLTK English stopwords} που περιέχει \textbf{179 κοινές αγγλικές λέξεις} όπως "the", "is", "at", "which", "on", κτλ:
 
 \begin{tcolorbox}[myCustomStyle={Stopwords Removal}]
     \begin{lstlisting}[style=myPythonStyle]
@@ -1595,7 +1595,7 @@ text = ' '.join(filtered_words)
 
 \subsection{Απόφαση: Όχι Stemming/Lemmatization}
 
-Αποφασίστηκε να \textbf{μην} χρησιμοποιηθεί stemming (π.χ. Porter Stemmer~\citeauthyear{porter1980algorithm}) ή lemmatization για τους εξής λόγους:
+Αποφασίστηκε να \textbf{μην} χρησιμοποιηθεί stemming (π.χ. Porter Stemmer) ή lemmatization για τους εξής λόγους:
 
 \begin{enumerate}
     \item \textbf{Sentence Transformers Capability}: Τα BERT-based μοντέλα (όπως το paraphrase-multilingual-MiniLM-L12-v2) είναι εκπαιδευμένα σε φυσικό κείμενο και χειρίζονται διαφορετικές μορφές της ίδιας λέξης (π.χ. "run", "running", "ran") μέσω του contextual encoding
@@ -1634,7 +1634,7 @@ text = ' '.join(filtered_words)
 
 \subsection{Bag of Words με CountVectorizer}
 
-Η πρώτη μέθοδος αναπαράστασης είναι το κλασικό \textbf{Bag-of-Words (BoW)} μοντέλο~\citeauthyear{harris1954distributional, manning1999foundations}, που αναπαριστά κάθε κείμενο ως διάνυσμα συχνοτήτων λέξεων.
+Η πρώτη μέθοδος αναπαράστασης είναι το κλασικό \textbf{Bag-of-Words (BoW)} μοντέλο, που αναπαριστά κάθε κείμενο ως διάνυσμα συχνοτήτων λέξεων.
 
 \subsubsection*{Υλοποίηση με CountVectorizer}
 
@@ -1878,7 +1878,7 @@ X_train_pca_10 = pca_10.fit_transform(X_train_emb)
 
 \subsection{Baseline Models}
 
-Δοκιμάστηκαν \textbf{τέσσερις διαφορετικοί αλγόριθμοι} μηχανικής μάθησης, καθένας με διαφορετικά χαρακτηριστικά και υποθέσεις~\citeauthyear{hastie2009elements, bishop2006pattern}:
+Δοκιμάστηκαν \textbf{τέσσερις διαφορετικοί αλγόριθμοι} μηχανικής μάθησης, καθένας με διαφορετικά χαρακτηριστικά και υποθέσεις:
 
 \subsubsection*{1. Multinomial Naive Bayes}
 
@@ -1905,7 +1905,7 @@ nb_model.fit(X_train_bow, y_train)
     \item MultinomialNB κατάλληλο για count data (όχι binary)
 \end{itemize}
 
-\textbf{Αιτιολόγηση:} Το Naive Bayes είναι κλασικό baseline για spam classification~\citeauthyear{mccallum1998comparison} λόγω της απλότητάς του και της καλής απόδοσης σε text classification.
+\textbf{Αιτιολόγηση:} Το Naive Bayes είναι κλασικό baseline για spam classification λόγω της απλότητάς του και της καλής απόδοσης σε text classification.
 
 \subsubsection*{2. k-Nearest Neighbors (k-NN)}
 
@@ -1975,7 +1975,7 @@ svm_model.fit(X_train_emb, y_train)
     K(\mathbf{x}_i, \mathbf{x}_j) = \exp\left(-\gamma \|\mathbf{x}_i - \mathbf{x}_j\|^2\right)
 \end{equation}
 
-Το RBF kernel μετατρέπει τα δεδομένα σε άπειρα διάστατο χώρο, επιτρέποντας μη-γραμμικούς διαχωρισμούς~\citeauthyear{scholkopf2002learning}.
+Το RBF kernel μετατρέπει τα δεδομένα σε άπειρα διάστατο χώρο, επιτρέποντας μη-γραμμικούς διαχωρισμούς.
 
 \subsubsection*{4. Logistic Regression}
 
@@ -2140,7 +2140,7 @@ logreg_model.fit(X_train_emb, y_train)
 
 \subsection{Evaluation Metrics}
 
-Για κάθε μοντέλο υπολογίστηκαν οι εξής μετρικές~\citeauthyear{fawcett2006introduction, powers2011evaluation}:
+Για κάθε μοντέλο υπολογίστηκαν οι εξής μετρικές:
 
 \begin{itemize}
     \item \textbf{Precision}: \(\frac{TP}{TP + FP}\) - Ακρίβεια spam predictions
@@ -4404,13 +4404,5 @@ jupyter lab
 \end{itemize}
 
 \textbf{Για βοήθεια:} Ανοίξτε issue στο \href{https://github.com/IBilba/spam-recognition}{GitHub repository} ή επικοινωνήστε με τον author.
-
-%=============================================================================
-% ΒΙΒΛΙΟΓΡΑΦΙΑ
-%=============================================================================
-\newpage
-\chapter{Βιβλιογραφία}
-\bibliographystyle{hellas}
-\bibliography{references}
 
 \end{document}
