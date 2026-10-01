@@ -40,7 +40,7 @@ Any use of this software must include proper attribution to the original author:
 
 > **Spam Email Classification System**  
 > Copyright © 2026 Μπίτζας Βασίλειος (Vasileios Bitzas)  
-> Source: [https://github.com/IBilba/spam-recognision](https://github.com/IBilba/spam-recognision)
+> Source: [https://github.com/vasilisbit/spam-recognision](https://github.com/vasilisbit/spam-recognision)
 
 ### 5. No Warranty
 
@@ -58,8 +58,8 @@ This license shall be governed by and construed in accordance with the laws appl
 
 For permissions beyond the scope of this license, please contact:
 
-- **GitHub**: [@IBilba](https://github.com/IBilba)
-- **Repository**: [https://github.com/IBilba/spam-recognision](https://github.com/IBilba/spam-recognision)
+- **GitHub**: [@vasilisbit](https://github.com/vasilisbit)
+- **Repository**: [https://github.com/vasilisbit/spam-recognision](https://github.com/vasilisbit/spam-recognision)
 
 ---
 

@@ -98,7 +98,7 @@ spam-recognision/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/IBilba/spam-recognision.git
+   git clone https://github.com/vasilisbit/spam-recognision.git
    cd spam-recognision
    ```
 
@@ -312,7 +312,7 @@ This project is under a **Proprietary License**. You may use this software for p
 
 **Μπίτζας Βασίλειος (Vasileios Bitzas)**
 
-- GitHub: [@IBilba](https://github.com/IBilba)
+- GitHub: [@vasilisbit](https://github.com/vasilisbit)
 
 ## 🙏 Acknowledgments
 
